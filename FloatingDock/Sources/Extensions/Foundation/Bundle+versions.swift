@@ -1,8 +1,8 @@
 //
-//  FloatingDockApp.swift
+//  Bundle+versions.swift
 //  FloatingDock
 //
-//  Created by Thomas Bonk on 29.01.23.
+//  Created by Thomas Bonk on 30.01.23.
 //  Copyright 2023 Thomas Bonk <thomas@meandmymac.de>
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,17 +18,15 @@
 //  limitations under the License.
 //
 
-import SwiftUI
+import Foundation
 
-@main
-struct FloatingDockApp: App {
+extension Bundle {
     
-    // MARK: - Public Properties
+    var releaseVersionNumber: String? {
+        return infoDictionary?["CFBundleShortVersionString"] as? String
+    }
     
-    var body: some Scene {        
-        MenuBarExtra("Floating Dock", systemImage: "menubar.dock.rectangle.badge.record") {
-            SettingsView()
-        }
-        .menuBarExtraStyle(.window)
+    var buildVersionNumber: String? {
+        return infoDictionary?["CFBundleVersion"] as? String
     }
 }

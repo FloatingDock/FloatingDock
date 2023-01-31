@@ -1,8 +1,8 @@
 //
-//  SettingsView.swift
+//  InformationView.swift
 //  FloatingDock
 //
-//  Created by Thomas Bonk on 29.01.23.
+//  Created by Thomas Bonk on 30.01.23.
 //  Copyright 2023 Thomas Bonk <thomas@meandmymac.de>
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,36 +20,24 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct InformationView: View {
     
     // MARK: - Public Properties
     
     var body: some View {
         VStack {
-            SettingsHeaderView()
-            TabView {
-                GeneralSettingsView()
-                    .tabItem { Text("General") }
-                    .padding()
-                DataImportView()
-                    .tabItem { Text("Import") }
-                    .padding()
-                InformationView()
-                    .tabItem { Text("Information") }
-                    .padding()
-                LicensesView()
-                    .tabItem { Text("Licenses") }
-                    .padding()
-            }
-            .padding()
+            Image("Logo")
+                .resizable()
+                .frame(width: 128, height: 128)
+                .padding(.all, 20)
+            Text("Copyright © 2023 Thomas Bonk")
+            Text("Version \(Bundle.main.releaseVersionNumber!) (\(Bundle.main.buildVersionNumber!))")
         }
-        .padding(.all, 10)
-        .frame(width: 500, height: 350)
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
+struct InformationView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        InformationView()
     }
 }

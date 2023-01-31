@@ -7,14 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E902337F2988D36C00CDA6E1 /* SwiftySandboxFileAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E902337E2988D36C00CDA6E1 /* SwiftySandboxFileAccess */; };
+		E902338129895B1800CDA6E1 /* DataImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902338029895B1800CDA6E1 /* DataImportView.swift */; };
+		E90233832989777B00CDA6E1 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90233822989777B00CDA6E1 /* ApplicationError.swift */; };
 		E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D10282298678030045D9B0 /* FloatingDockApp.swift */; };
 		E9D10287298678040045D9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10286298678040045D9B0 /* Assets.xcassets */; };
 		E9D1028A298678040045D9B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10289298678040045D9B0 /* Preview Assets.xcassets */; };
 		E9D10297298683370045D9B0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D10296298683370045D9B0 /* SettingsView.swift */; };
 		E9D1029B298688700045D9B0 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D1029A298688700045D9B0 /* SettingsHeaderView.swift */; };
+		E9D102A129878E6A0045D9B0 /* SwiftKeys in Frameworks */ = {isa = PBXBuildFile; productRef = E9D102A029878E6A0045D9B0 /* SwiftKeys */; };
+		E9D102A429878E970045D9B0 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = E9D102A329878E970045D9B0 /* LaunchAtLogin */; };
+		E9D102A629878F840045D9B0 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102A529878F840045D9B0 /* InformationView.swift */; };
+		E9D102A8298790680045D9B0 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102A7298790680045D9B0 /* GeneralSettingsView.swift */; };
+		E9D102AC298795D90045D9B0 /* Bundle+versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102AB298795D90045D9B0 /* Bundle+versions.swift */; };
+		E9D102AE2987AD480045D9B0 /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102AD2987AD480045D9B0 /* LicensesView.swift */; };
+		E9D102B02987AFF50045D9B0 /* Licenses.md in Resources */ = {isa = PBXBuildFile; fileRef = E9D102AF2987AE6D0045D9B0 /* Licenses.md */; };
+		E9D102B32987DBD30045D9B0 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102B22987DBD30045D9B0 /* SettingsModel.swift */; };
+		E9D102B6298851220045D9B0 /* DockEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102B5298851220045D9B0 /* DockEntry.swift */; };
+		E9D102B8298852750045D9B0 /* DockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102B7298852750045D9B0 /* DockModel.swift */; };
+		E9D102BA298852F60045D9B0 /* DockModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102B9298852F60045D9B0 /* DockModelProvider.swift */; };
+		E9D102BE298855C40045D9B0 /* DockModelProvider+importDockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102BD298855C40045D9B0 /* DockModelProvider+importDockSettings.swift */; };
+		E9D102C0298856790045D9B0 /* URL+locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102BF298856790045D9B0 /* URL+locations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E902338029895B1800CDA6E1 /* DataImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataImportView.swift; sourceTree = "<group>"; };
+		E90233822989777B00CDA6E1 /* ApplicationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
 		E9D1027F298678030045D9B0 /* FloatingDock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingDock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D10282298678030045D9B0 /* FloatingDockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockApp.swift; sourceTree = "<group>"; };
 		E9D10286298678040045D9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -25,6 +43,17 @@
 		E9D1029C298689960045D9B0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E9D1029D298689960045D9B0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E9D1029E298689960045D9B0 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		E9D102A529878F840045D9B0 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		E9D102A7298790680045D9B0 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		E9D102AB298795D90045D9B0 /* Bundle+versions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+versions.swift"; sourceTree = "<group>"; };
+		E9D102AD2987AD480045D9B0 /* LicensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
+		E9D102AF2987AE6D0045D9B0 /* Licenses.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Licenses.md; sourceTree = "<group>"; };
+		E9D102B22987DBD30045D9B0 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		E9D102B5298851220045D9B0 /* DockEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockEntry.swift; sourceTree = "<group>"; };
+		E9D102B7298852750045D9B0 /* DockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockModel.swift; sourceTree = "<group>"; };
+		E9D102B9298852F60045D9B0 /* DockModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockModelProvider.swift; sourceTree = "<group>"; };
+		E9D102BD298855C40045D9B0 /* DockModelProvider+importDockSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockModelProvider+importDockSettings.swift"; sourceTree = "<group>"; };
+		E9D102BF298856790045D9B0 /* URL+locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+locations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D102A429878E970045D9B0 /* LaunchAtLogin in Frameworks */,
+				E9D102A129878E6A0045D9B0 /* SwiftKeys in Frameworks */,
+				E902337F2988D36C00CDA6E1 /* SwiftySandboxFileAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				E9D102922986802E0045D9B0 /* Application */,
+				E9D102A9298795B20045D9B0 /* Extensions */,
+				E9D102B12987DBBC0045D9B0 /* Model */,
 				E9D10295298683230045D9B0 /* Views */,
 			);
 			path = Sources;
@@ -88,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D10282298678030045D9B0 /* FloatingDockApp.swift */,
+				E90233822989777B00CDA6E1 /* ApplicationError.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -97,6 +132,7 @@
 			children = (
 				E9D10286298678040045D9B0 /* Assets.xcassets */,
 				E9D1028B298678040045D9B0 /* FloatingDock.entitlements */,
+				E9D102AF2987AE6D0045D9B0 /* Licenses.md */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -104,6 +140,7 @@
 		E9D10295298683230045D9B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E902338029895B1800CDA6E1 /* DataImportView.swift */,
 				E9D102982986884B0045D9B0 /* Settings */,
 			);
 			path = Views;
@@ -122,8 +159,48 @@
 			isa = PBXGroup;
 			children = (
 				E9D1029A298688700045D9B0 /* SettingsHeaderView.swift */,
+				E9D102A7298790680045D9B0 /* GeneralSettingsView.swift */,
+				E9D102A529878F840045D9B0 /* InformationView.swift */,
+				E9D102AD2987AD480045D9B0 /* LicensesView.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		E9D102A9298795B20045D9B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9D102AA298795C20045D9B0 /* Foundation */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E9D102AA298795C20045D9B0 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				E9D102AB298795D90045D9B0 /* Bundle+versions.swift */,
+				E9D102BF298856790045D9B0 /* URL+locations.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		E9D102B12987DBBC0045D9B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9D102B22987DBD30045D9B0 /* SettingsModel.swift */,
+				E9D102B4298850FF0045D9B0 /* Dock */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E9D102B4298850FF0045D9B0 /* Dock */ = {
+			isa = PBXGroup;
+			children = (
+				E9D102B5298851220045D9B0 /* DockEntry.swift */,
+				E9D102B7298852750045D9B0 /* DockModel.swift */,
+				E9D102B9298852F60045D9B0 /* DockModelProvider.swift */,
+				E9D102BD298855C40045D9B0 /* DockModelProvider+importDockSettings.swift */,
+			);
+			path = Dock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +219,11 @@
 			dependencies = (
 			);
 			name = FloatingDock;
+			packageProductDependencies = (
+				E9D102A029878E6A0045D9B0 /* SwiftKeys */,
+				E9D102A329878E970045D9B0 /* LaunchAtLogin */,
+				E902337E2988D36C00CDA6E1 /* SwiftySandboxFileAccess */,
+			);
 			productName = FloatingDock;
 			productReference = E9D1027F298678030045D9B0 /* FloatingDock.app */;
 			productType = "com.apple.product-type.application";
@@ -170,6 +252,11 @@
 				Base,
 			);
 			mainGroup = E9D10276298678030045D9B0;
+			packageReferences = (
+				E9D1029F29878E6A0045D9B0 /* XCRemoteSwiftPackageReference "SwiftKeys" */,
+				E9D102A229878E970045D9B0 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
+				E902337D2988D36C00CDA6E1 /* XCRemoteSwiftPackageReference "SwiftySandboxFileAccess" */,
+			);
 			productRefGroup = E9D10280298678030045D9B0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -186,6 +273,7 @@
 			files = (
 				E9D1028A298678040045D9B0 /* Preview Assets.xcassets in Resources */,
 				E9D10287298678040045D9B0 /* Assets.xcassets in Resources */,
+				E9D102B02987AFF50045D9B0 /* Licenses.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,9 +284,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D102B8298852750045D9B0 /* DockModel.swift in Sources */,
+				E902338129895B1800CDA6E1 /* DataImportView.swift in Sources */,
+				E9D102B32987DBD30045D9B0 /* SettingsModel.swift in Sources */,
+				E9D102C0298856790045D9B0 /* URL+locations.swift in Sources */,
+				E9D102BE298855C40045D9B0 /* DockModelProvider+importDockSettings.swift in Sources */,
+				E9D102B6298851220045D9B0 /* DockEntry.swift in Sources */,
+				E9D102AE2987AD480045D9B0 /* LicensesView.swift in Sources */,
+				E9D102AC298795D90045D9B0 /* Bundle+versions.swift in Sources */,
+				E9D102BA298852F60045D9B0 /* DockModelProvider.swift in Sources */,
 				E9D1029B298688700045D9B0 /* SettingsHeaderView.swift in Sources */,
+				E9D102A8298790680045D9B0 /* GeneralSettingsView.swift in Sources */,
+				E9D102A629878F840045D9B0 /* InformationView.swift in Sources */,
 				E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */,
 				E9D10297298683370045D9B0 /* SettingsView.swift in Sources */,
+				E90233832989777B00CDA6E1 /* ApplicationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,12 +432,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.thbonk.FloatingDock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -360,12 +462,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.thbonk.FloatingDock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -396,6 +500,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E902337D2988D36C00CDA6E1 /* XCRemoteSwiftPackageReference "SwiftySandboxFileAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ConfusedVorlon/SwiftySandboxFileAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		E9D1029F29878E6A0045D9B0 /* XCRemoteSwiftPackageReference "SwiftKeys" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jordanbaird/SwiftKeys.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.8;
+			};
+		};
+		E9D102A229878E970045D9B0 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E902337E2988D36C00CDA6E1 /* SwiftySandboxFileAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E902337D2988D36C00CDA6E1 /* XCRemoteSwiftPackageReference "SwiftySandboxFileAccess" */;
+			productName = SwiftySandboxFileAccess;
+		};
+		E9D102A029878E6A0045D9B0 /* SwiftKeys */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D1029F29878E6A0045D9B0 /* XCRemoteSwiftPackageReference "SwiftKeys" */;
+			productName = SwiftKeys;
+		};
+		E9D102A329878E970045D9B0 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D102A229878E970045D9B0 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E9D10277298678030045D9B0 /* Project object */;
 }

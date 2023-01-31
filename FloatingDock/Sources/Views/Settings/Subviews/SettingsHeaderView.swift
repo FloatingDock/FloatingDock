@@ -21,6 +21,9 @@
 import SwiftUI
 
 struct SettingsHeaderView: View {
+    
+    // MARK: - Public Properties
+    
     var body: some View {
         HStack {
             Text("Floating Dock Settings")

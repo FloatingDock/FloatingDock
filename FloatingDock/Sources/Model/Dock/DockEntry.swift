@@ -1,8 +1,8 @@
 //
-//  FloatingDockApp.swift
+//  DockEntry.swift
 //  FloatingDock
 //
-//  Created by Thomas Bonk on 29.01.23.
+//  Created by Thomas Bonk on 30.01.23.
 //  Copyright 2023 Thomas Bonk <thomas@meandmymac.de>
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,17 +18,35 @@
 //  limitations under the License.
 //
 
-import SwiftUI
+import Foundation
 
-@main
-struct FloatingDockApp: App {
+struct DockEntry: Codable, Identifiable {
     
     // MARK: - Public Properties
     
-    var body: some Scene {        
-        MenuBarExtra("Floating Dock", systemImage: "menubar.dock.rectangle.badge.record") {
-            SettingsView()
-        }
-        .menuBarExtraStyle(.window)
+    public var id: Int = 0
+    public var label: String = ""
+    public var bundleIdentifier: String = ""
+    public var url: URL? = nil
+    
+    
+    // MARK: - Initialization
+    
+    init(id: Int = 0, label: String, bundleIdentifier: String, url: URL?) {
+        self.id = id
+        self.label = label
+        self.bundleIdentifier = bundleIdentifier
+        self.url = url
+    }
+    
+    
+    // MARK: - Coding Keys
+    
+    public enum CodingKeys: CodingKey {
+        case id
+        case label
+        case bundleIdentifier
+        case url
     }
 }
+
