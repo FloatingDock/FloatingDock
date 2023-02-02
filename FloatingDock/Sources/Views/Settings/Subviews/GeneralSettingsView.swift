@@ -42,7 +42,7 @@ struct GeneralSettingsView: View {
                 Section("Hotkeys") {
                     HStack {
                         Text("Toggle Floating Dock window")
-                        KeyRecorderView(name: "ToggleMainWindow")
+                        KeyRecorderView(name: .DockWindowToggle)
                     }
                     .padding(.bottom, 30)
                 }

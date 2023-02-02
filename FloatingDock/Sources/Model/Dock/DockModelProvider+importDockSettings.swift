@@ -35,7 +35,7 @@ fileprivate extension String {
 extension DockModelProvider {
     
     func importDockSettings(_ window: NSWindow?, onError: ((Error) -> ())? = nil) {
-        SandboxFileAccess()
+        SandboxFileAccess.shared
             .access(
                 fileURL: .dockConfiguration,
                 askIfNecessary: true,
@@ -76,6 +76,7 @@ extension DockModelProvider {
         }
         
         if let persistentApplications = dockConfiguration[.PersistentApplications] as? Array<Dictionary<String, Any>> {
+            self.dockModel.applications.removeAll()
             persistentApplications.map(toDockEntry(app:)).forEach { entry in
                 self.dockModel.applications.append(entry)
             }

@@ -1,8 +1,8 @@
 //
-//  FloatingDockApp.swift
+//  DockView.swift
 //  FloatingDock
 //
-//  Created by Thomas Bonk on 29.01.23.
+//  Created by Thomas Bonk on 01.02.23.
 //  Copyright 2023 Thomas Bonk <thomas@meandmymac.de>
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,42 +18,36 @@
 //  limitations under the License.
 //
 
-import SwiftKeys
 import SwiftUI
 
-extension NSNotification.Name {
-    static let OpenAppNotification = NSNotification.Name(rawValue: "___OpenAppNotification___")
-}
-
-
-@main
-struct FloatingDockApp: App {
+struct DockView: View {
     
     // MARK: - Public Properties
     
-    var body: some Scene {
-        MenuBarExtra("Floating Dock", systemImage: "menubar.dock.rectangle.badge.record") {
-            SettingsView()
+    var body: some View {
+        LazyVGrid(columns: Array(repeating: GridItem(.fixed(iconSize + 2), alignment: .center), count: 10)) {
+            ForEach(DockModelProvider.shared.dockModel.applications, id: \.id) { entry in
+                DockItemView(entry: entry)
+                    .frame(width: gridSize, height: gridSize)
+            }
         }
-        .menuBarExtraStyle(.window)
+        .padding(.all, 15)
     }
     
     
     // MARK: - Private Properties
     
-    private let dockWindowToggleCommand = KeyCommand(name: .DockWindowToggle)
-    
-    
-    // MARK: - Initialization
-    
-    init() {
-        dockWindowToggleCommand.observe(.keyDown, handler: toggleDockWindow)
+    private var iconSize: CGFloat {
+        SettingsModel.shared.iconSize
     }
     
-    
-    // MARK: - Private Methods
-    
-    private func toggleDockWindow() {
-        DockWindowToggleController.shared.toggleDockWindow()
+    private var gridSize: CGFloat {
+        iconSize + 2 * (iconSize / 48)
+    }
+}
+
+struct DockView_Previews: PreviewProvider {
+    static var previews: some View {
+        DockView()
     }
 }

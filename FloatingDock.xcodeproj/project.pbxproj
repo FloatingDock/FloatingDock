@@ -10,6 +10,13 @@
 		E902337F2988D36C00CDA6E1 /* SwiftySandboxFileAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E902337E2988D36C00CDA6E1 /* SwiftySandboxFileAccess */; };
 		E902338129895B1800CDA6E1 /* DataImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902338029895B1800CDA6E1 /* DataImportView.swift */; };
 		E90233832989777B00CDA6E1 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90233822989777B00CDA6E1 /* ApplicationError.swift */; };
+		E90233852989A53400CDA6E1 /* HotkeyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90233842989A53400CDA6E1 /* HotkeyNames.swift */; };
+		E90233872989AD7A00CDA6E1 /* DockWindowToggleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90233862989AD7A00CDA6E1 /* DockWindowToggleController.swift */; };
+		E902338A2989B12B00CDA6E1 /* DockWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90233892989B12B00CDA6E1 /* DockWindowController.swift */; };
+		E902338E298A33B200CDA6E1 /* DockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902338D298A33B200CDA6E1 /* DockView.swift */; };
+		E9023390298ACD7A00CDA6E1 /* DockEntry+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */; };
+		E9023393298C37D800CDA6E1 /* DockItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023392298C37D800CDA6E1 /* DockItemView.swift */; };
+		E9023396298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */; };
 		E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D10282298678030045D9B0 /* FloatingDockApp.swift */; };
 		E9D10287298678040045D9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10286298678040045D9B0 /* Assets.xcassets */; };
 		E9D1028A298678040045D9B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10289298678040045D9B0 /* Preview Assets.xcassets */; };
@@ -33,6 +40,13 @@
 /* Begin PBXFileReference section */
 		E902338029895B1800CDA6E1 /* DataImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataImportView.swift; sourceTree = "<group>"; };
 		E90233822989777B00CDA6E1 /* ApplicationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
+		E90233842989A53400CDA6E1 /* HotkeyNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyNames.swift; sourceTree = "<group>"; };
+		E90233862989AD7A00CDA6E1 /* DockWindowToggleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockWindowToggleController.swift; sourceTree = "<group>"; };
+		E90233892989B12B00CDA6E1 /* DockWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockWindowController.swift; sourceTree = "<group>"; };
+		E902338D298A33B200CDA6E1 /* DockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockView.swift; sourceTree = "<group>"; };
+		E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockEntry+image.swift"; sourceTree = "<group>"; };
+		E9023392298C37D800CDA6E1 /* DockItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItemView.swift; sourceTree = "<group>"; };
+		E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SandboxFileAccess+shared.swift"; sourceTree = "<group>"; };
 		E9D1027F298678030045D9B0 /* FloatingDock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingDock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D10282298678030045D9B0 /* FloatingDockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockApp.swift; sourceTree = "<group>"; };
 		E9D10286298678040045D9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +84,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E90233882989AE9500CDA6E1 /* DockWindow */ = {
+			isa = PBXGroup;
+			children = (
+				E90233862989AD7A00CDA6E1 /* DockWindowToggleController.swift */,
+				E90233892989B12B00CDA6E1 /* DockWindowController.swift */,
+			);
+			path = DockWindow;
+			sourceTree = "<group>";
+		};
+		E9023391298C37B700CDA6E1 /* Dock */ = {
+			isa = PBXGroup;
+			children = (
+				E902338D298A33B200CDA6E1 /* DockView.swift */,
+				E9023392298C37D800CDA6E1 /* DockItemView.swift */,
+			);
+			path = Dock;
+			sourceTree = "<group>";
+		};
+		E9023394298C4C2E00CDA6E1 /* SwiftySandboxFileAccess */ = {
+			isa = PBXGroup;
+			children = (
+				E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */,
+			);
+			path = SwiftySandboxFileAccess;
+			sourceTree = "<group>";
+		};
 		E9D10276298678030045D9B0 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +163,8 @@
 			children = (
 				E9D10282298678030045D9B0 /* FloatingDockApp.swift */,
 				E90233822989777B00CDA6E1 /* ApplicationError.swift */,
+				E90233842989A53400CDA6E1 /* HotkeyNames.swift */,
+				E90233882989AE9500CDA6E1 /* DockWindow */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -140,6 +182,7 @@
 		E9D10295298683230045D9B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E9023391298C37B700CDA6E1 /* Dock */,
 				E902338029895B1800CDA6E1 /* DataImportView.swift */,
 				E9D102982986884B0045D9B0 /* Settings */,
 			);
@@ -170,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D102AA298795C20045D9B0 /* Foundation */,
+				E9023394298C4C2E00CDA6E1 /* SwiftySandboxFileAccess */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D102B5298851220045D9B0 /* DockEntry.swift */,
+				E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */,
 				E9D102B7298852750045D9B0 /* DockModel.swift */,
 				E9D102B9298852F60045D9B0 /* DockModelProvider.swift */,
 				E9D102BD298855C40045D9B0 /* DockModelProvider+importDockSettings.swift */,
@@ -285,14 +330,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9D102B8298852750045D9B0 /* DockModel.swift in Sources */,
+				E902338E298A33B200CDA6E1 /* DockView.swift in Sources */,
 				E902338129895B1800CDA6E1 /* DataImportView.swift in Sources */,
 				E9D102B32987DBD30045D9B0 /* SettingsModel.swift in Sources */,
 				E9D102C0298856790045D9B0 /* URL+locations.swift in Sources */,
+				E902338A2989B12B00CDA6E1 /* DockWindowController.swift in Sources */,
+				E90233852989A53400CDA6E1 /* HotkeyNames.swift in Sources */,
 				E9D102BE298855C40045D9B0 /* DockModelProvider+importDockSettings.swift in Sources */,
+				E90233872989AD7A00CDA6E1 /* DockWindowToggleController.swift in Sources */,
+				E9023393298C37D800CDA6E1 /* DockItemView.swift in Sources */,
+				E9023396298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift in Sources */,
 				E9D102B6298851220045D9B0 /* DockEntry.swift in Sources */,
 				E9D102AE2987AD480045D9B0 /* LicensesView.swift in Sources */,
 				E9D102AC298795D90045D9B0 /* Bundle+versions.swift in Sources */,
 				E9D102BA298852F60045D9B0 /* DockModelProvider.swift in Sources */,
+				E9023390298ACD7A00CDA6E1 /* DockEntry+image.swift in Sources */,
 				E9D1029B298688700045D9B0 /* SettingsHeaderView.swift in Sources */,
 				E9D102A8298790680045D9B0 /* GeneralSettingsView.swift in Sources */,
 				E9D102A629878F840045D9B0 /* InformationView.swift in Sources */,

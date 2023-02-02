@@ -21,11 +21,18 @@
 import Foundation
 
 extension URL {
-    static var userDirectory = FileManager.default.homeDirectoryForCurrentUser
+    //static var userDirectory = FileManager.default.homeDirectory(forUser: NSUserName())!
+    static var userDirectory: URL {
+        let pw = getpwuid(getuid())
+        let home = pw?.pointee.pw_dir
+        let homePath = FileManager.default.string(withFileSystemRepresentation: home!, length: Int(strlen(home!)))
+
+        return URL(filePath: homePath)
+    }
 
     static var dockConfiguration: URL {
       return userDirectory
-        .appendingPathComponent(NSUserName())
+        //.appendingPathComponent(NSUserName())
         .appendingPathComponent("Library")
         .appendingPathComponent("Preferences")
         .appendingPathComponent("com.apple.dock.plist")

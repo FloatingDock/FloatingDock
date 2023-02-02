@@ -37,7 +37,8 @@ class DockModelProvider {
     // MARK: - Initialization
     
     private init() {
-        dockModel = DockModel()
+        try? loadModel()
+        //dockModel = DockModel()
     }
     
     
