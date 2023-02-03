@@ -1,5 +1,5 @@
 //
-//  NSApplication+showAppSettings.swift
+//  NSApplication+standardPanel.swift
 //  FloatingDock
 //
 //  Created by Thomas Bonk on 03.02.23.
@@ -23,7 +23,21 @@ import AppKit
 extension NSApplication {
     
     func showAppSettings() {
-        NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+        DispatchQueue.main.async {
+            NSApp.activate(ignoringOtherApps: true)
+        }
+        DispatchQueue.main.async {
+            NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+        }
+    }
+    
+    func showAboutPanel() {
+        DispatchQueue.main.async {
+            NSApp.activate(ignoringOtherApps: true)
+        }
+        DispatchQueue.main.async {
+            NSApp.orderFrontStandardAboutPanel(self)
+        }
     }
     
 }

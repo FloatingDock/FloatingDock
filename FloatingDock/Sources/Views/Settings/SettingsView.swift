@@ -26,19 +26,13 @@ struct SettingsView: View {
     
     var body: some View {
         VStack {
-            SettingsHeaderView()
+            //SettingsHeaderView()
             TabView {
                 GeneralSettingsView()
                     .tabItem { Text("General") }
                     .padding()
                 DataImportView()
                     .tabItem { Text("Import") }
-                    .padding()
-                InformationView()
-                    .tabItem { Text("Information") }
-                    .padding()
-                LicensesView()
-                    .tabItem { Text("Licenses") }
                     .padding()
             }
             .padding()

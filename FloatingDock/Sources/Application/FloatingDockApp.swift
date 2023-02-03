@@ -33,9 +33,22 @@ struct FloatingDockApp: App {
     
     var body: some Scene {
         MenuBarExtra("Floating Dock", systemImage: "menubar.dock.rectangle.badge.record") {
+            Button("About Floating Dock") {
+                NSApplication.shared.showAboutPanel()
+            }
+            Divider()
+            Button("Settings...") {
+                NSApplication.shared.showAppSettings()
+            }
+            Divider()
+            Button("Quit Floating Dock") {
+                NSApplication.shared.terminate(self)
+            }
+        }
+        
+        Settings {
             SettingsView()
         }
-        .menuBarExtraStyle(.window)
     }
     
     
