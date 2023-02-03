@@ -17,6 +17,7 @@
 		E9023390298ACD7A00CDA6E1 /* DockEntry+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */; };
 		E9023393298C37D800CDA6E1 /* DockItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023392298C37D800CDA6E1 /* DockItemView.swift */; };
 		E9023396298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */; };
+		E9023399298CDF5500CDA6E1 /* NSApplication+showAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023398298CDF5500CDA6E1 /* NSApplication+showAppSettings.swift */; };
 		E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D10282298678030045D9B0 /* FloatingDockApp.swift */; };
 		E9D10287298678040045D9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10286298678040045D9B0 /* Assets.xcassets */; };
 		E9D1028A298678040045D9B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10289298678040045D9B0 /* Preview Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockEntry+image.swift"; sourceTree = "<group>"; };
 		E9023392298C37D800CDA6E1 /* DockItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItemView.swift; sourceTree = "<group>"; };
 		E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SandboxFileAccess+shared.swift"; sourceTree = "<group>"; };
+		E9023398298CDF5500CDA6E1 /* NSApplication+showAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication+showAppSettings.swift"; sourceTree = "<group>"; };
 		E9D1027F298678030045D9B0 /* FloatingDock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingDock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D10282298678030045D9B0 /* FloatingDockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockApp.swift; sourceTree = "<group>"; };
 		E9D10286298678040045D9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +110,14 @@
 				E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */,
 			);
 			path = SwiftySandboxFileAccess;
+			sourceTree = "<group>";
+		};
+		E9023397298CDF3100CDA6E1 /* AppKit */ = {
+			isa = PBXGroup;
+			children = (
+				E9023398298CDF5500CDA6E1 /* NSApplication+showAppSettings.swift */,
+			);
+			path = AppKit;
 			sourceTree = "<group>";
 		};
 		E9D10276298678030045D9B0 = {
@@ -212,6 +222,7 @@
 		E9D102A9298795B20045D9B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E9023397298CDF3100CDA6E1 /* AppKit */,
 				E9D102AA298795C20045D9B0 /* Foundation */,
 				E9023394298C4C2E00CDA6E1 /* SwiftySandboxFileAccess */,
 			);
@@ -337,6 +348,7 @@
 				E902338A2989B12B00CDA6E1 /* DockWindowController.swift in Sources */,
 				E90233852989A53400CDA6E1 /* HotkeyNames.swift in Sources */,
 				E9D102BE298855C40045D9B0 /* DockModelProvider+importDockSettings.swift in Sources */,
+				E9023399298CDF5500CDA6E1 /* NSApplication+showAppSettings.swift in Sources */,
 				E90233872989AD7A00CDA6E1 /* DockWindowToggleController.swift in Sources */,
 				E9023393298C37D800CDA6E1 /* DockItemView.swift in Sources */,
 				E9023396298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift in Sources */,
