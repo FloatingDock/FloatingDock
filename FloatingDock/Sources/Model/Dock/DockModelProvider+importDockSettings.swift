@@ -34,7 +34,7 @@ fileprivate extension String {
 
 extension DockModelProvider {
     
-    func importDockSettings(_ window: NSWindow?, onError: ((Error) -> ())? = nil) {
+    func importDockSettings(_ window: NSWindow?, completed: ((Error?) -> ())? = nil) {
         SandboxFileAccess.shared
             .access(
                 fileURL: .dockConfiguration,
@@ -47,19 +47,20 @@ extension DockModelProvider {
                             guard
                                 let url = accessInfo.securityScopedURL
                             else {
-                                onError?(ApplicationError.noSecutrityScopedUrl)
+                                completed?(ApplicationError.noSecutrityScopedUrl)
                                 return
                             }
                             
                             do {
-                                try self.importDockModel(from: URL.saveDockConfiguration(url))
+                                try self.importDockModel(from: url)
                             } catch {
-                                onError?(error)
+                                completed?(error)
                             }
+                            completed?(nil)
                             break
                             
                         case .failure(let error):
-                            onError?(error)
+                            completed?(error)
                             break
                     }
                 }

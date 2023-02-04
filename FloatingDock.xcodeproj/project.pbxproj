@@ -19,6 +19,16 @@
 		E9023396298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */; };
 		E9023399298CDF5500CDA6E1 /* NSApplication+standardPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */; };
 		E947E5AF298CF03200314F44 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E947E5AE298CF03200314F44 /* Credits.rtf */; };
+		E947E5B6298D2CCB00314F44 /* OnboardingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5B5298D2CCB00314F44 /* OnboardingWindowController.swift */; };
+		E947E5B8298D553E00314F44 /* OnboardingPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5B7298D553E00314F44 /* OnboardingPageController.swift */; };
+		E947E5BB298D581E00314F44 /* DTOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = E947E5BA298D581E00314F44 /* DTOnboarding */; };
+		E947E5BE298DB24C00314F44 /* ImportDockConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5BD298DB24C00314F44 /* ImportDockConfigurationView.swift */; };
+		E947E5C0298E477E00314F44 /* DockModel+filteredData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5BF298E477E00314F44 /* DockModel+filteredData.swift */; };
+		E947E5C2298E492200314F44 /* GrantPermissionsToDirectoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C1298E492200314F44 /* GrantPermissionsToDirectoriesView.swift */; };
+		E947E5C4298ECA0100314F44 /* URL+identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C3298ECA0100314F44 /* URL+identifiable.swift */; };
+		E947E5C6298ECE7700314F44 /* DefineHotkeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C5298ECE7700314F44 /* DefineHotkeyView.swift */; };
+		E947E5C8298F055800314F44 /* LaunchAtLogingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C7298F055800314F44 /* LaunchAtLogingView.swift */; };
+		E947E5CA298F06CB00314F44 /* FinishedOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C9298F06CB00314F44 /* FinishedOnboardingView.swift */; };
 		E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D10282298678030045D9B0 /* FloatingDockApp.swift */; };
 		E9D10287298678040045D9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10286298678040045D9B0 /* Assets.xcassets */; };
 		E9D1028A298678040045D9B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10289298678040045D9B0 /* Preview Assets.xcassets */; };
@@ -48,6 +58,15 @@
 		E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SandboxFileAccess+shared.swift"; sourceTree = "<group>"; };
 		E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication+standardPanel.swift"; sourceTree = "<group>"; };
 		E947E5AE298CF03200314F44 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		E947E5B5298D2CCB00314F44 /* OnboardingWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWindowController.swift; sourceTree = "<group>"; };
+		E947E5B7298D553E00314F44 /* OnboardingPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageController.swift; sourceTree = "<group>"; };
+		E947E5BD298DB24C00314F44 /* ImportDockConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDockConfigurationView.swift; sourceTree = "<group>"; };
+		E947E5BF298E477E00314F44 /* DockModel+filteredData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockModel+filteredData.swift"; sourceTree = "<group>"; };
+		E947E5C1298E492200314F44 /* GrantPermissionsToDirectoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantPermissionsToDirectoriesView.swift; sourceTree = "<group>"; };
+		E947E5C3298ECA0100314F44 /* URL+identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+identifiable.swift"; sourceTree = "<group>"; };
+		E947E5C5298ECE7700314F44 /* DefineHotkeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineHotkeyView.swift; sourceTree = "<group>"; };
+		E947E5C7298F055800314F44 /* LaunchAtLogingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogingView.swift; sourceTree = "<group>"; };
+		E947E5C9298F06CB00314F44 /* FinishedOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedOnboardingView.swift; sourceTree = "<group>"; };
 		E9D1027F298678030045D9B0 /* FloatingDock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingDock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D10282298678030045D9B0 /* FloatingDockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockApp.swift; sourceTree = "<group>"; };
 		E9D10286298678040045D9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +95,7 @@
 				E9D102A429878E970045D9B0 /* LaunchAtLogin in Frameworks */,
 				E9D102A129878E6A0045D9B0 /* SwiftKeys in Frameworks */,
 				E902337F2988D36C00CDA6E1 /* SwiftySandboxFileAccess in Frameworks */,
+				E947E5BB298D581E00314F44 /* DTOnboarding in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +134,36 @@
 				E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */,
 			);
 			path = AppKit;
+			sourceTree = "<group>";
+		};
+		E947E5B3298D2BC600314F44 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				E947E5B4298D2C9C00314F44 /* OnboardingWindow */,
+				E90233882989AE9500CDA6E1 /* DockWindow */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
+		E947E5B4298D2C9C00314F44 /* OnboardingWindow */ = {
+			isa = PBXGroup;
+			children = (
+				E947E5B5298D2CCB00314F44 /* OnboardingWindowController.swift */,
+				E947E5B7298D553E00314F44 /* OnboardingPageController.swift */,
+			);
+			path = OnboardingWindow;
+			sourceTree = "<group>";
+		};
+		E947E5BC298DB1E400314F44 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E947E5BD298DB24C00314F44 /* ImportDockConfigurationView.swift */,
+				E947E5C1298E492200314F44 /* GrantPermissionsToDirectoriesView.swift */,
+				E947E5C5298ECE7700314F44 /* DefineHotkeyView.swift */,
+				E947E5C7298F055800314F44 /* LaunchAtLogingView.swift */,
+				E947E5C9298F06CB00314F44 /* FinishedOnboardingView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		E9D10276298678030045D9B0 = {
@@ -160,6 +210,7 @@
 				E9D102A9298795B20045D9B0 /* Extensions */,
 				E9D102B12987DBBC0045D9B0 /* Model */,
 				E9D10295298683230045D9B0 /* Views */,
+				E947E5B3298D2BC600314F44 /* Windows */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -170,7 +221,6 @@
 				E9D10282298678030045D9B0 /* FloatingDockApp.swift */,
 				E90233822989777B00CDA6E1 /* ApplicationError.swift */,
 				E90233842989A53400CDA6E1 /* HotkeyNames.swift */,
-				E90233882989AE9500CDA6E1 /* DockWindow */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -188,8 +238,9 @@
 		E9D10295298683230045D9B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E9023391298C37B700CDA6E1 /* Dock */,
 				E902338029895B1800CDA6E1 /* DataImportView.swift */,
+				E9023391298C37B700CDA6E1 /* Dock */,
+				E947E5BC298DB1E400314F44 /* Onboarding */,
 				E9D102982986884B0045D9B0 /* Settings */,
 			);
 			path = Views;
@@ -228,6 +279,7 @@
 			children = (
 				E9D102AB298795D90045D9B0 /* Bundle+versions.swift */,
 				E9D102BF298856790045D9B0 /* URL+locations.swift */,
+				E947E5C3298ECA0100314F44 /* URL+identifiable.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -244,9 +296,10 @@
 		E9D102B4298850FF0045D9B0 /* Dock */ = {
 			isa = PBXGroup;
 			children = (
+				E9D102B7298852750045D9B0 /* DockModel.swift */,
+				E947E5BF298E477E00314F44 /* DockModel+filteredData.swift */,
 				E9D102B5298851220045D9B0 /* DockEntry.swift */,
 				E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */,
-				E9D102B7298852750045D9B0 /* DockModel.swift */,
 				E9D102B9298852F60045D9B0 /* DockModelProvider.swift */,
 				E9D102BD298855C40045D9B0 /* DockModelProvider+importDockSettings.swift */,
 			);
@@ -273,6 +326,7 @@
 				E9D102A029878E6A0045D9B0 /* SwiftKeys */,
 				E9D102A329878E970045D9B0 /* LaunchAtLogin */,
 				E902337E2988D36C00CDA6E1 /* SwiftySandboxFileAccess */,
+				E947E5BA298D581E00314F44 /* DTOnboarding */,
 			);
 			productName = FloatingDock;
 			productReference = E9D1027F298678030045D9B0 /* FloatingDock.app */;
@@ -306,6 +360,7 @@
 				E9D1029F29878E6A0045D9B0 /* XCRemoteSwiftPackageReference "SwiftKeys" */,
 				E9D102A229878E970045D9B0 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 				E902337D2988D36C00CDA6E1 /* XCRemoteSwiftPackageReference "SwiftySandboxFileAccess" */,
+				E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */,
 			);
 			productRefGroup = E9D10280298678030045D9B0 /* Products */;
 			projectDirPath = "";
@@ -336,10 +391,16 @@
 			files = (
 				E9D102B8298852750045D9B0 /* DockModel.swift in Sources */,
 				E902338E298A33B200CDA6E1 /* DockView.swift in Sources */,
+				E947E5B6298D2CCB00314F44 /* OnboardingWindowController.swift in Sources */,
+				E947E5C6298ECE7700314F44 /* DefineHotkeyView.swift in Sources */,
+				E947E5B8298D553E00314F44 /* OnboardingPageController.swift in Sources */,
+				E947E5BE298DB24C00314F44 /* ImportDockConfigurationView.swift in Sources */,
+				E947E5C8298F055800314F44 /* LaunchAtLogingView.swift in Sources */,
 				E902338129895B1800CDA6E1 /* DataImportView.swift in Sources */,
 				E9D102B32987DBD30045D9B0 /* SettingsModel.swift in Sources */,
 				E9D102C0298856790045D9B0 /* URL+locations.swift in Sources */,
 				E902338A2989B12B00CDA6E1 /* DockWindowController.swift in Sources */,
+				E947E5CA298F06CB00314F44 /* FinishedOnboardingView.swift in Sources */,
 				E90233852989A53400CDA6E1 /* HotkeyNames.swift in Sources */,
 				E9D102BE298855C40045D9B0 /* DockModelProvider+importDockSettings.swift in Sources */,
 				E9023399298CDF5500CDA6E1 /* NSApplication+standardPanel.swift in Sources */,
@@ -350,11 +411,14 @@
 				E9D102AC298795D90045D9B0 /* Bundle+versions.swift in Sources */,
 				E9D102BA298852F60045D9B0 /* DockModelProvider.swift in Sources */,
 				E9023390298ACD7A00CDA6E1 /* DockEntry+image.swift in Sources */,
+				E947E5C0298E477E00314F44 /* DockModel+filteredData.swift in Sources */,
 				E9D1029B298688700045D9B0 /* SettingsHeaderView.swift in Sources */,
 				E9D102A8298790680045D9B0 /* GeneralSettingsView.swift in Sources */,
 				E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */,
+				E947E5C2298E492200314F44 /* GrantPermissionsToDirectoriesView.swift in Sources */,
 				E9D10297298683370045D9B0 /* SettingsView.swift in Sources */,
 				E90233832989777B00CDA6E1 /* ApplicationError.swift in Sources */,
+				E947E5C4298ECA0100314F44 /* URL+identifiable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +630,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thbonk/DTOnboarding.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		E9D1029F29878E6A0045D9B0 /* XCRemoteSwiftPackageReference "SwiftKeys" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jordanbaird/SwiftKeys.git";
@@ -589,6 +661,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E902337D2988D36C00CDA6E1 /* XCRemoteSwiftPackageReference "SwiftySandboxFileAccess" */;
 			productName = SwiftySandboxFileAccess;
+		};
+		E947E5BA298D581E00314F44 /* DTOnboarding */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */;
+			productName = DTOnboarding;
 		};
 		E9D102A029878E6A0045D9B0 /* SwiftKeys */ = {
 			isa = XCSwiftPackageProductDependency;

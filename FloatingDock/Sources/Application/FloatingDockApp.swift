@@ -55,12 +55,14 @@ struct FloatingDockApp: App {
     // MARK: - Private Properties
     
     private let dockWindowToggleCommand = KeyCommand(name: .DockWindowToggle)
+    private let onboardingWindowController = OnboardingWindowController()
     
     
     // MARK: - Initialization
     
     init() {
         dockWindowToggleCommand.observe(.keyDown, handler: toggleDockWindow)
+        onboardingWindowController.showWindow(self)
     }
     
     

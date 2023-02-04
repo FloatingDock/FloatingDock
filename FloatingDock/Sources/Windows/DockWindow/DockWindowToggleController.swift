@@ -75,13 +75,6 @@ class DockWindowToggleController {
     }
     
     private func startApp(notification: Notification) {
-        /*
-         TODO:
-         - retrieve the folder where the app is located
-         - get access to the folder
-         - append the name of the app to the security scoped url
-         - launch the app
-         */
         let entry = notification.object as! DockEntry
         let containingFolderUrl = entry.url!.deletingLastPathComponent()
         let appFilename = entry.url!.lastPathComponent
@@ -96,8 +89,12 @@ class DockWindowToggleController {
                     switch result {
                         case .success(let accessInfo):
                             let appUrl = accessInfo.securityScopedURL?.appendingPathComponent(appFilename)
-                            NSWorkspace.shared.open(appUrl!)
-                            self.closeDockWindow()
+                            DispatchQueue.main.async {
+                                NSWorkspace.shared.open(appUrl!)
+                            }
+                            DispatchQueue.main.async {
+                                self.closeDockWindow()
+                            }
                             break
                             
                         case .failure(_):

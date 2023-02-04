@@ -20,13 +20,17 @@
 
 import Foundation
 
-struct DockEntry: Codable, Identifiable {
+class DockEntry: Codable, Identifiable, ObservableObject {
     
     // MARK: - Public Properties
     
+    @Published
     public var id: Int = 0
+    @Published
     public var label: String = ""
+    @Published
     public var bundleIdentifier: String = ""
+    @Published
     public var url: URL? = nil
     
     
@@ -37,6 +41,29 @@ struct DockEntry: Codable, Identifiable {
         self.label = label
         self.bundleIdentifier = bundleIdentifier
         self.url = url
+    }
+    
+    
+    // MARK: - Codable
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        id = try container.decode(Int.self, forKey: .id)
+        label = try container.decode(String.self, forKey: .label)
+        bundleIdentifier = try container.decode(String.self, forKey: .bundleIdentifier)
+        url = try? container.decode(URL.self, forKey: .url)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(id, forKey: .id)
+        try container.encode(label, forKey: .label)
+        try container.encode(bundleIdentifier, forKey: .bundleIdentifier)
+        if let url {
+            try container.encode(url, forKey: .url)
+        }
     }
     
     
