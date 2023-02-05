@@ -69,6 +69,7 @@
 		E947E5C7298F055800314F44 /* LaunchAtLogingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogingView.swift; sourceTree = "<group>"; };
 		E947E5C9298F06CB00314F44 /* OnboardingSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSummaryView.swift; sourceTree = "<group>"; };
 		E947E5CB298FB77800314F44 /* Navigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
+		E947E5CD299058DA00314F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E9D1027F298678030045D9B0 /* FloatingDock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingDock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D10282298678030045D9B0 /* FloatingDockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockApp.swift; sourceTree = "<group>"; };
 		E9D10286298678040045D9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,6 +192,7 @@
 		E9D10281298678030045D9B0 /* FloatingDock */ = {
 			isa = PBXGroup;
 			children = (
+				E947E5CD299058DA00314F44 /* Info.plist */,
 				E9D102912986801F0045D9B0 /* Sources */,
 				E9D10294298680440045D9B0 /* Resources */,
 				E9D10288298678040045D9B0 /* Preview Content */,
@@ -556,7 +558,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Floating Dock";
+				INFOPLIST_FILE = FloatingDock/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -588,7 +590,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Floating Dock";
+				INFOPLIST_FILE = FloatingDock/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
