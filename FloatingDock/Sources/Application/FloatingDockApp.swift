@@ -39,13 +39,12 @@ struct FloatingDockApp: App {
     
     var body: some Scene {
         MenuBarExtra("Floating Dock", systemImage: "menubar.dock.rectangle.badge.record") {
-            Button("About Floating Dock") {
-                NSApplication.shared.showAboutPanel()
-            }
+            Button("Toggle Floating Dock Panel", action: toggleDockWindow)
             Divider()
-            Button("Settings...") {
-                NSApplication.shared.showAppSettings()
-            }
+            Button("Settings...", action: NSApplication.shared.showAppSettings)
+            Button("Open Onboarding Panel...", action: openOnboardingWindow)
+            Divider()
+            Button("About Floating Dock", action: NSApplication.shared.showAboutPanel)
             Divider()
             Button("Quit Floating Dock") {
                 NSApplication.shared.terminate(self)
@@ -73,7 +72,7 @@ struct FloatingDockApp: App {
     
     init() {
         dockWindowToggleCommand.observe(.keyDown, handler: toggleDockWindow)
-        showOnboardingWindow()
+        showOnboardingWindowIfTaskAreOpen()
     }
     
     
@@ -83,11 +82,17 @@ struct FloatingDockApp: App {
         DockWindowToggleController.shared.toggleDockWindow()
     }
     
-    private func showOnboardingWindow() {
+    private func showOnboardingWindowIfTaskAreOpen() {
         DispatchQueue.main.async {
             if !isOnboarded {
                 onboardingWindowController.showWindow(self)
             }
+        }
+    }
+    
+    private func openOnboardingWindow() {
+        DispatchQueue.main.async {
+            onboardingWindowController.showWindow(self)
         }
     }
 }
