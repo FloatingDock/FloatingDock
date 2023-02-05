@@ -36,7 +36,7 @@ Please grant access to that file. Otherwise the macOS Dock configuration can't b
 """)
 }
 
-struct ImportDockConfigurationView: View {
+struct ImportDockConfigurationView: View, Navigatable {
     
     // MARK: - Public Properties
     
@@ -81,6 +81,13 @@ struct ImportDockConfigurationView: View {
             }
             
             Spacer()
+            
+            if !dockModel.applications.isEmpty {
+                HStack {
+                    Spacer()
+                    Button("Next Task") { navigateForward() }
+                }
+            }
         }
         .padding(.all, 30)
         .onReceive(NotificationCenter.default.publisher(for: NSWindow.didBecomeKeyNotification)) { notification in

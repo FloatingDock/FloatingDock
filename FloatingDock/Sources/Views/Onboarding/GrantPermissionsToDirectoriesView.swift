@@ -37,7 +37,7 @@ You can proceed to the next step.
 """)
 }
 
-struct GrantPermissionsToDirectoriesView: View {
+struct GrantPermissionsToDirectoriesView: View, Navigatable {
     
     // MARK: - Public Properties
     
@@ -86,6 +86,13 @@ struct GrantPermissionsToDirectoriesView: View {
             }
             
             Spacer()
+            
+            if !dockModel.applications.isEmpty && dockModel.directoriesWithoutPermission.isEmpty {
+                HStack {
+                    Spacer()
+                    Button("Next Task") { navigateForward() }
+                }
+            }
         }
         .padding(.all, 30)
         .onReceive(NotificationCenter.default.publisher(for: NSWindow.didBecomeKeyNotification)) { notification in

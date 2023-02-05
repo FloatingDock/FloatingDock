@@ -22,7 +22,13 @@ import SwiftKeys
 import SwiftUI
 
 extension NSNotification.Name {
+    // Launch an application
     static let OpenAppNotification = NSNotification.Name(rawValue: "___OpenAppNotification___")
+    
+    // Navigation in the Onboarding UI
+    static let OnboardingNavigateBack = NSNotification.Name(rawValue: "___OnboardingNavigateBack___")
+    static let OnboardingNavigateForward = NSNotification.Name(rawValue: "__OnboardingNavigateForward__")
+    static let OnboardingNavigateToPage = NSNotification.Name(rawValue: "__OnboardingNavigateToPage___")
 }
 
 
@@ -56,13 +62,18 @@ struct FloatingDockApp: App {
     
     private let dockWindowToggleCommand = KeyCommand(name: .DockWindowToggle)
     private let onboardingWindowController = OnboardingWindowController()
+    private var isOnboarded: Bool {
+        return !DockModelProvider.shared.dockModel.applications.isEmpty
+            && DockModelProvider.shared.dockModel.directoriesWithoutPermission.isEmpty
+            && dockWindowToggleCommand.key != nil
+    }
     
     
     // MARK: - Initialization
     
     init() {
         dockWindowToggleCommand.observe(.keyDown, handler: toggleDockWindow)
-        onboardingWindowController.showWindow(self)
+        showOnboardingWindow()
     }
     
     
@@ -70,5 +81,13 @@ struct FloatingDockApp: App {
     
     private func toggleDockWindow() {
         DockWindowToggleController.shared.toggleDockWindow()
+    }
+    
+    private func showOnboardingWindow() {
+        DispatchQueue.main.async {
+            if !isOnboarded {
+                onboardingWindowController.showWindow(self)
+            }
+        }
     }
 }

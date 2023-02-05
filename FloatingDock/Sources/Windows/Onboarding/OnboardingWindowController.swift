@@ -41,6 +41,7 @@ class OnboardingWindowController: NSWindowController {
     ]
     private var onboardingConfig: OnboardingConfig!
     private var onboardingController: DTOnboardingController!
+    private var observers = Set<AnyHashable>()
     
     
     // MARK: - Initialization
@@ -70,12 +71,36 @@ class OnboardingWindowController: NSWindowController {
         super.init(window: wnd)
         
         self.contentViewController = onboardingController
+        
+        observers.insert(NotificationCenter.default.addObserver(
+            forName: .OnboardingNavigateBack,
+            object: nil,
+            queue: OperationQueue.main,
+            using: navigateBack(notification:)) as! AnyHashable)
+        observers.insert(NotificationCenter.default.addObserver(
+            forName: .OnboardingNavigateForward,
+            object: nil,
+            queue: OperationQueue.main,
+            using: navigateForward(notification:)) as! AnyHashable)
+        observers.insert(NotificationCenter.default.addObserver(
+            forName: .OnboardingNavigateToPage,
+            object: nil,
+            queue: OperationQueue.main,
+            using: navigateToPage(notification:)) as! AnyHashable)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        observers.forEach { observer in
+            NotificationCenter.default.removeObserver(observer)
+        }
+    }
+    
+    
+    // MARK: - NSWindowController
     
     override func showWindow(_ sender: Any?) {
         DispatchQueue.main.async {
@@ -89,6 +114,23 @@ class OnboardingWindowController: NSWindowController {
         }
         DispatchQueue.main.async {
             NSApp.activate(ignoringOtherApps: true)
+        }
+    }
+    
+    
+    // MARK: - Notification Handlers
+    
+    private func navigateBack(notification: Notification) {
+        onboardingController.navigateBack()
+    }
+    
+    private func navigateForward(notification: Notification) {
+        onboardingController.navigateForward()
+    }
+    
+    private func navigateToPage(notification: Notification) {
+        if let controllerId = notification.object as? String {
+            onboardingController.navigate(to: controllerId)
         }
     }
 }

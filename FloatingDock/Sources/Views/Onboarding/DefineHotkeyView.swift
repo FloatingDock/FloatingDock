@@ -29,7 +29,7 @@ Here you can define the hotkey to toggle the Floating Dock panel.
 """)
 }
 
-struct DefineHotkeyView: View {
+struct DefineHotkeyView: View, Navigatable {
     
     // MARK: - Public Properties
     
@@ -48,6 +48,13 @@ struct DefineHotkeyView: View {
             }
             
             Spacer()
+            
+            if KeyCommand(name: .DockWindowToggle).key != nil {
+                HStack {
+                    Spacer()
+                    Button("Next Task") { navigateForward() }
+                }
+            }
         }
         .padding(.all, 30)
     }

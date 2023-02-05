@@ -27,7 +27,7 @@ You can launch Floating Dock automatically when you login to your macOS account.
 """)
 }
 
-struct LaunchAtLogingView: View {
+struct LaunchAtLogingView: View, Navigatable {
     
     // MARK: - Public Properties
     
@@ -43,6 +43,11 @@ struct LaunchAtLogingView: View {
             LaunchAtLogin.Toggle("Automatically launch Floating Dock when you login")
             
             Spacer()
+            
+            HStack {
+                Spacer()
+                Button("Show Summary") { navigateForward() }
+            }
         }
         .padding(.all, 30)
     }

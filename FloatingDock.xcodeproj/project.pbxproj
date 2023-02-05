@@ -29,6 +29,7 @@
 		E947E5C6298ECE7700314F44 /* DefineHotkeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C5298ECE7700314F44 /* DefineHotkeyView.swift */; };
 		E947E5C8298F055800314F44 /* LaunchAtLogingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C7298F055800314F44 /* LaunchAtLogingView.swift */; };
 		E947E5CA298F06CB00314F44 /* FinishedOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C9298F06CB00314F44 /* FinishedOnboardingView.swift */; };
+		E947E5CC298FB77800314F44 /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5CB298FB77800314F44 /* Navigatable.swift */; };
 		E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D10282298678030045D9B0 /* FloatingDockApp.swift */; };
 		E9D10287298678040045D9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10286298678040045D9B0 /* Assets.xcassets */; };
 		E9D1028A298678040045D9B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10289298678040045D9B0 /* Preview Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		E947E5C5298ECE7700314F44 /* DefineHotkeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineHotkeyView.swift; sourceTree = "<group>"; };
 		E947E5C7298F055800314F44 /* LaunchAtLogingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogingView.swift; sourceTree = "<group>"; };
 		E947E5C9298F06CB00314F44 /* FinishedOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedOnboardingView.swift; sourceTree = "<group>"; };
+		E947E5CB298FB77800314F44 /* Navigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
 		E9D1027F298678030045D9B0 /* FloatingDock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingDock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D10282298678030045D9B0 /* FloatingDockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockApp.swift; sourceTree = "<group>"; };
 		E9D10286298678040045D9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,19 +141,20 @@
 		E947E5B3298D2BC600314F44 /* Windows */ = {
 			isa = PBXGroup;
 			children = (
-				E947E5B4298D2C9C00314F44 /* OnboardingWindow */,
+				E947E5B4298D2C9C00314F44 /* Onboarding */,
 				E90233882989AE9500CDA6E1 /* DockWindow */,
 			);
 			path = Windows;
 			sourceTree = "<group>";
 		};
-		E947E5B4298D2C9C00314F44 /* OnboardingWindow */ = {
+		E947E5B4298D2C9C00314F44 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				E947E5B5298D2CCB00314F44 /* OnboardingWindowController.swift */,
 				E947E5B7298D553E00314F44 /* OnboardingPageController.swift */,
+				E947E5CB298FB77800314F44 /* Navigatable.swift */,
 			);
-			path = OnboardingWindow;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		E947E5BC298DB1E400314F44 /* Onboarding */ = {
@@ -403,6 +406,7 @@
 				E947E5CA298F06CB00314F44 /* FinishedOnboardingView.swift in Sources */,
 				E90233852989A53400CDA6E1 /* HotkeyNames.swift in Sources */,
 				E9D102BE298855C40045D9B0 /* DockModelProvider+importDockSettings.swift in Sources */,
+				E947E5CC298FB77800314F44 /* Navigatable.swift in Sources */,
 				E9023399298CDF5500CDA6E1 /* NSApplication+standardPanel.swift in Sources */,
 				E90233872989AD7A00CDA6E1 /* DockWindowToggleController.swift in Sources */,
 				E9023393298C37D800CDA6E1 /* DockItemView.swift in Sources */,
@@ -546,7 +550,7 @@
 				CODE_SIGN_ENTITLEMENTS = FloatingDock/FloatingDock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"FloatingDock/Preview Content\"";
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -576,7 +580,7 @@
 				CODE_SIGN_ENTITLEMENTS = FloatingDock/FloatingDock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"FloatingDock/Preview Content\"";
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
