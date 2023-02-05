@@ -38,6 +38,11 @@ Please grant access to that file. Otherwise the macOS Dock configuration can't b
 
 struct ImportDockConfigurationView: View, Navigatable {
     
+    // MARK: - Public Static Constants
+    
+    public static let Id = "\(ImportDockConfigurationView.self)"
+    
+    
     // MARK: - Public Properties
     
     var body: some View {

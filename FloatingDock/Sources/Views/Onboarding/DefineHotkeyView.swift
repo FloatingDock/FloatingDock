@@ -31,6 +31,11 @@ Here you can define the hotkey to toggle the Floating Dock panel.
 
 struct DefineHotkeyView: View, Navigatable {
     
+    // MARK: - Public Static Constants
+    
+    public static let Id = "\(DefineHotkeyView.self)"
+    
+    
     // MARK: - Public Properties
     
     var body: some View {

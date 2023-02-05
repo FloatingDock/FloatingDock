@@ -28,16 +28,16 @@ class OnboardingWindowController: NSWindowController {
     
     private var onboardingPages = [
         OnboardingPageController(
-            controllerId: "ImportDockConfigurationView",
+            controllerId: ImportDockConfigurationView.Id,
             view: ImportDockConfigurationView().environmentObject(DockModelProvider.shared.dockModel)),
         OnboardingPageController(
-            controllerId: "GrantPermissionsToDirectoriesView",
+            controllerId: GrantPermissionsToDirectoriesView.Id,
             view: GrantPermissionsToDirectoriesView().environmentObject(DockModelProvider.shared.dockModel)),
-        OnboardingPageController(controllerId: "DefineHotkeyView", view: DefineHotkeyView()),
-        OnboardingPageController(controllerId: "LaunchAtLogingView", view: LaunchAtLogingView()),
+        OnboardingPageController(controllerId: DefineHotkeyView.Id, view: DefineHotkeyView()),
+        OnboardingPageController(controllerId: LaunchAtLogingView.Id, view: LaunchAtLogingView()),
         OnboardingPageController(
-            controllerId: "FinishedOnboardingView",
-            view: FinishedOnboardingView().environmentObject(DockModelProvider.shared.dockModel))
+            controllerId: OnboardingSummaryView.Id,
+            view: OnboardingSummaryView().environmentObject(DockModelProvider.shared.dockModel))
     ]
     private var onboardingConfig: OnboardingConfig!
     private var onboardingController: DTOnboardingController!

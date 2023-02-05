@@ -29,6 +29,11 @@ You can launch Floating Dock automatically when you login to your macOS account.
 
 struct LaunchAtLogingView: View, Navigatable {
     
+    // MARK: - Public Static Constants
+    
+    public static let Id = "\(LaunchAtLogingView.self)"
+    
+    
     // MARK: - Public Properties
     
     var body: some View {

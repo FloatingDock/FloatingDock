@@ -39,6 +39,11 @@ You can proceed to the next step.
 
 struct GrantPermissionsToDirectoriesView: View, Navigatable {
     
+    // MARK: - Public Static Constants
+    
+    public static let Id = "\(GrantPermissionsToDirectoriesView.self)"
+    
+    
     // MARK: - Public Properties
     
     var body: some View {
@@ -50,6 +55,15 @@ struct GrantPermissionsToDirectoriesView: View, Navigatable {
             if dockModel.applications.isEmpty {
                 Text(.noDockConfigImported)
                     .bold()
+                    .padding(.bottom, 10)
+                
+                HStack {
+                    Button("Import macOS Dock Configuration") {
+                        navigate(to: ImportDockConfigurationView.Id)
+                    }
+                    .buttonStyle(.link)
+                    Spacer()
+                }
             } else if !dockModel.directoriesWithoutPermission.isEmpty {
                 Text(.explanation)
                     .padding(.bottom, 10)
