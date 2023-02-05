@@ -20,10 +20,11 @@
 
 import Foundation
 
-struct DockModel: Codable {
+class DockModel: Codable, ObservableObject {
     
     // MARK: - Public Properties
     
+    @Published
     public var applications: [DockEntry]
     
     
@@ -31,6 +32,21 @@ struct DockModel: Codable {
     
     init() {
         applications = []
+    }
+    
+    
+    // MARK: - Codable
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        applications = try container.decode([DockEntry].self, forKey: .applications)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(applications, forKey: .applications)
     }
     
 

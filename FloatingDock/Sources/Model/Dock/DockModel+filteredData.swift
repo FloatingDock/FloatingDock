@@ -1,8 +1,8 @@
 //
-//  URL+locations.swift
+//  DockModel+filteredData.swift
 //  FloatingDock
 //
-//  Created by Thomas Bonk on 30.01.23.
+//  Created by Thomas Bonk on 04.02.23.
 //  Copyright 2023 Thomas Bonk <thomas@meandmymac.de>
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,21 +19,18 @@
 //
 
 import Foundation
+import SwiftySandboxFileAccess
 
-extension URL {
-    //static var userDirectory = FileManager.default.homeDirectory(forUser: NSUserName())!
-    static var userDirectory: URL {
-        let pw = getpwuid(getuid())
-        let home = pw?.pointee.pw_dir
-        let homePath = FileManager.default.string(withFileSystemRepresentation: home!, length: Int(strlen(home!)))
-
-        return URL(filePath: homePath)
-    }
-
-    static var dockConfiguration: URL {
-      return userDirectory
-        .appendingPathComponent("Library")
-        .appendingPathComponent("Preferences")
-        .appendingPathComponent("com.apple.dock.plist")
+extension DockModel {
+    
+    var directoriesWithoutPermission: [URL] {
+        return Array(Set(applications
+            .filter { $0.url != nil }
+            .map { $0.url!.deletingLastPathComponent() }
+            .filter { url in
+                let accessInfo = SandboxFileAccess.shared.accessInfo(forFileURL: url)
+                
+                return accessInfo.securityScopedURL == nil
+            }))
     }
 }

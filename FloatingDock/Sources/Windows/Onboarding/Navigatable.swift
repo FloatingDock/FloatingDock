@@ -1,8 +1,8 @@
 //
-//  URL+locations.swift
+//  Navigatable.swift
 //  FloatingDock
 //
-//  Created by Thomas Bonk on 30.01.23.
+//  Created by Thomas Bonk on 05.02.23.
 //  Copyright 2023 Thomas Bonk <thomas@meandmymac.de>
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,20 +20,23 @@
 
 import Foundation
 
-extension URL {
-    //static var userDirectory = FileManager.default.homeDirectory(forUser: NSUserName())!
-    static var userDirectory: URL {
-        let pw = getpwuid(getuid())
-        let home = pw?.pointee.pw_dir
-        let homePath = FileManager.default.string(withFileSystemRepresentation: home!, length: Int(strlen(home!)))
+protocol Navigatable {
+    func navigateBack()
+    func navigateForward()
+    func navigate(to controllerId: String)
+}
 
-        return URL(filePath: homePath)
+extension Navigatable {
+    func navigateBack() {
+        NotificationCenter.default.post(name: .OnboardingNavigateBack, object: nil)
     }
-
-    static var dockConfiguration: URL {
-      return userDirectory
-        .appendingPathComponent("Library")
-        .appendingPathComponent("Preferences")
-        .appendingPathComponent("com.apple.dock.plist")
+    
+    func navigateForward()
+    {
+      NotificationCenter.default.post(name: .OnboardingNavigateForward, object: nil)
+    }
+    
+    func navigate(to controllerId: String) {
+        NotificationCenter.default.post(name: .OnboardingNavigateToPage, object: controllerId)
     }
 }

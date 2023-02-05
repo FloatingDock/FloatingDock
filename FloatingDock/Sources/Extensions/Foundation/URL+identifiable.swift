@@ -1,8 +1,8 @@
 //
-//  URL+locations.swift
+//  URL+identifiable.swift
 //  FloatingDock
 //
-//  Created by Thomas Bonk on 30.01.23.
+//  Created by Thomas Bonk on 04.02.23.
 //  Copyright 2023 Thomas Bonk <thomas@meandmymac.de>
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,20 +20,8 @@
 
 import Foundation
 
-extension URL {
-    //static var userDirectory = FileManager.default.homeDirectory(forUser: NSUserName())!
-    static var userDirectory: URL {
-        let pw = getpwuid(getuid())
-        let home = pw?.pointee.pw_dir
-        let homePath = FileManager.default.string(withFileSystemRepresentation: home!, length: Int(strlen(home!)))
-
-        return URL(filePath: homePath)
-    }
-
-    static var dockConfiguration: URL {
-      return userDirectory
-        .appendingPathComponent("Library")
-        .appendingPathComponent("Preferences")
-        .appendingPathComponent("com.apple.dock.plist")
+extension URL: Identifiable {
+    public var id: String {
+        self.description
     }
 }
