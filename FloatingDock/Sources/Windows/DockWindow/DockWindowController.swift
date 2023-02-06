@@ -19,6 +19,7 @@
 //
 
 import AppKit
+import Foundation
 import SwiftUI
 
 class DockWindowController: NSWindowController {
@@ -54,9 +55,17 @@ class DockWindowController: NSWindowController {
             rootView: DockView()
                 .background(SettingsModel.shared.dockBackgroundColor.opacity(SettingsModel.shared.dockBackgroundOpacity))
                 .cornerRadius(10))
-        window?.setFrame(window!.contentView!.frame, display: false)
-        window?.setFrameOrigin(point)
-        super.showWindow(sender)
+        
+        DispatchQueue.main.async {
+            let contentSize = self.window!.contentView!.frame.size
+            let winOrigin = NSPoint(x: point.x - contentSize.width / 2, y: point.y - contentSize.height / 2)
+            
+            self.window?.contentView?.setFrameSize(contentSize)
+            self.window?.setFrameOrigin(winOrigin)
+        }
+        DispatchQueue.main.async {
+            super.showWindow(sender)
+        }
     }
     
     
