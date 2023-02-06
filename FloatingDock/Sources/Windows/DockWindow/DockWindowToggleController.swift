@@ -90,10 +90,10 @@ class DockWindowToggleController {
                         case .success(let accessInfo):
                             let appUrl = accessInfo.securityScopedURL?.appendingPathComponent(appFilename)
                             DispatchQueue.main.async {
-                                NSWorkspace.shared.open(appUrl!)
+                                self.closeDockWindow()
                             }
                             DispatchQueue.main.async {
-                                self.closeDockWindow()
+                                NSWorkspace.shared.open(appUrl!)
                             }
                             break
                             
