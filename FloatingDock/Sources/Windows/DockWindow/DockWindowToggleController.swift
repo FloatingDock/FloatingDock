@@ -19,10 +19,11 @@
 //
 
 import AppKit
+import CoreServices
 import Foundation
 import SwiftySandboxFileAccess
 
-class DockWindowToggleController {
+class DockWindowToggleController: ApplicationLauncher {
     
     // MARK: - Public Static Properties
     
@@ -62,6 +63,53 @@ class DockWindowToggleController {
     }
     
     
+    // MARK: - ApplicationLauncher
+    
+    func launchApplication(from entry: DockEntry, completion: CompletionHandler? = nil, error: ErrorHandler? = nil) {
+        let containingFolderUrl = entry.url!.deletingLastPathComponent()
+        let appFilename = entry.url!.lastPathComponent
+
+        SandboxFileAccess
+            .shared
+            .access(
+                fileURL: containingFolderUrl,
+                askIfNecessary: true,
+                fromWindow: self.dockWindowController?.window,
+                persistPermission: true) { result in
+                    switch result {
+                        case .success(let accessInfo):
+                            let appUrl = accessInfo.securityScopedURL?.appendingPathComponent(appFilename)
+
+                            DispatchQueue.main.async {
+                                NSWorkspace.shared.openApplication(at: appUrl!, configuration: {
+                                    let config = NSWorkspace.OpenConfiguration()
+                                    config.activates = true
+                                    
+                                    return config
+                                }()) { app, err in
+                                    if let err {
+                                        DispatchQueue.main.async {
+                                            error?(err)
+                                        }
+                                        return
+                                    }
+                                    
+                                    DispatchQueue.main.async {
+                                        completion?()
+                                        self.closeDockWindow()
+                                    }
+                                }
+                            }
+                            break
+                            
+                        case .failure(let err):
+                            error?(err)
+                            break
+                    }
+                }
+    }
+    
+    
     // MARK: - Private Methods
     
     private func openDockWindow() {
@@ -75,31 +123,6 @@ class DockWindowToggleController {
     }
     
     private func startApp(notification: Notification) {
-        let entry = notification.object as! DockEntry
-        let containingFolderUrl = entry.url!.deletingLastPathComponent()
-        let appFilename = entry.url!.lastPathComponent
-        
-        SandboxFileAccess
-            .shared
-            .access(
-                fileURL: containingFolderUrl,
-                askIfNecessary: true,
-                fromWindow: dockWindowController?.window,
-                persistPermission: true) { result in
-                    switch result {
-                        case .success(let accessInfo):
-                            let appUrl = accessInfo.securityScopedURL?.appendingPathComponent(appFilename)
-                            DispatchQueue.main.async {
-                                self.closeDockWindow()
-                            }
-                            DispatchQueue.main.async {
-                                NSWorkspace.shared.open(appUrl!)
-                            }
-                            break
-                            
-                        case .failure(_):
-                            break
-                    }
-                }
+        launchApplication(from: notification.object as! DockEntry)
     }
 }
