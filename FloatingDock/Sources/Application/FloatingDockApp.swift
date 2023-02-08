@@ -22,9 +22,6 @@ import SwiftKeys
 import SwiftUI
 
 extension NSNotification.Name {
-    // Launch an application
-    static let OpenAppNotification = NSNotification.Name(rawValue: "___OpenAppNotification___")
-    
     // Navigation in the Onboarding UI
     static let OnboardingNavigateBack = NSNotification.Name(rawValue: "___OnboardingNavigateBack___")
     static let OnboardingNavigateForward = NSNotification.Name(rawValue: "__OnboardingNavigateForward__")

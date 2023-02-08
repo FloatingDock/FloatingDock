@@ -34,9 +34,12 @@ class DockWindowController: NSWindowController {
             }
     }
     
+    private var launcher: any ApplicationLauncher
+    
     // MARK: - Initialization
     
-    init() {
+    init(launcher: any ApplicationLauncher) {
+        self.launcher = launcher
         super.init(window: DockWindowController.makeWindow())
     }
     

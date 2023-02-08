@@ -20,7 +20,7 @@
 
 import Foundation
 
-protocol ApplicationLauncher {
+protocol ApplicationLauncher: ObservableObject {
     typealias CompletionHandler = () -> ()
     typealias ErrorHandler = (Error) -> ()
     
