@@ -22,6 +22,19 @@ import AppKit
 import CoreServices
 import Foundation
 import SwiftySandboxFileAccess
+import SwiftUI
+
+
+struct ApplicationLauncherKey: EnvironmentKey {
+    static let defaultValue: any ApplicationLauncher = DockWindowToggleController.shared
+}
+
+extension EnvironmentValues {
+  var applicationLauncher: any ApplicationLauncher {
+    get { self[ApplicationLauncherKey.self] }
+  }
+}
+
 
 class DockWindowToggleController: ApplicationLauncher {
     
@@ -40,11 +53,6 @@ class DockWindowToggleController: ApplicationLauncher {
     // MARK: - Initialization
     
     private init() {
-        NotificationCenter.default.addObserver(
-            forName: .OpenAppNotification,
-            object: nil,
-            queue: OperationQueue.main,
-            using: startApp(notification:))
     }
     
     deinit {
@@ -113,16 +121,12 @@ class DockWindowToggleController: ApplicationLauncher {
     // MARK: - Private Methods
     
     private func openDockWindow() {
-        dockWindowController = DockWindowController()
+        dockWindowController = DockWindowController(launcher: self)
         dockWindowController?.showWindow(self)
     }
     
     private func closeDockWindow() {
         dockWindowController?.close()
         dockWindowController = nil
-    }
-    
-    private func startApp(notification: Notification) {
-        launchApplication(from: notification.object as! DockEntry)
     }
 }

@@ -35,7 +35,7 @@ struct DockItemView: View {
                 }
             }
             .onTapGesture {
-                NotificationCenter.default.post(name: .OpenAppNotification, object: entry)
+                launcher.launchApplication(from: entry, completion: nil, error: nil)
             }
     }
     
@@ -46,6 +46,8 @@ struct DockItemView: View {
     
     @State
     private var scale = 1.0
+    @Environment(\.applicationLauncher)
+    private var launcher
     
     private var iconSize: CGFloat {
         SettingsModel.shared.iconSize
