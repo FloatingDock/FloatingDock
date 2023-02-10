@@ -32,10 +32,6 @@ struct DataImportView: View {
                         
                     }
                 }
-                
-                Text("Floating Dock needs access to the file or folder\n\n`\(URL.dockConfiguration.path())`.\n\nYou might need to give persmission; if this is the case, a file open panel is shown where you have to give the permission.")
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(10)
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: NSWindow.didBecomeKeyNotification)) { notification in

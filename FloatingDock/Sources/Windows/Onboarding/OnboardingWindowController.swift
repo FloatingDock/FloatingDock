@@ -30,9 +30,6 @@ class OnboardingWindowController: NSWindowController {
         OnboardingPageController(
             controllerId: ImportDockConfigurationView.Id,
             view: ImportDockConfigurationView().environmentObject(DockModelProvider.shared.dockModel)),
-        OnboardingPageController(
-            controllerId: GrantPermissionsToDirectoriesView.Id,
-            view: GrantPermissionsToDirectoriesView().environmentObject(DockModelProvider.shared.dockModel)),
         OnboardingPageController(controllerId: DefineHotkeyView.Id, view: DefineHotkeyView()),
         OnboardingPageController(controllerId: LaunchAtLogingView.Id, view: LaunchAtLogingView()),
         OnboardingPageController(

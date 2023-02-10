@@ -20,7 +20,6 @@
 
 import AppKit
 import Foundation
-import SwiftySandboxFileAccess
 
 fileprivate extension String {
     static let PersistentApplications = "persistent-apps"
@@ -35,47 +34,19 @@ fileprivate extension String {
 extension DockModelProvider {
     
     func importDockSettings(_ window: NSWindow?, completed: ((Error?) -> ())? = nil) {
-        SandboxFileAccess.shared
-            .access(
-                fileURL: .dockConfiguration,
-                askIfNecessary: true,
-                fromWindow: window,
-                persistPermission: true) { sandboxResult in
-                    
-                    switch sandboxResult {
-                        case .success(let accessInfo):
-                            guard
-                                let url = accessInfo.securityScopedURL
-                            else {
-                                completed?(ApplicationError.noSecutrityScopedUrl)
-                                return
-                            }
-                            
-                            do {
-                                try self.importDockModel(from: url)
-                            } catch {
-                                completed?(error)
-                            }
-                            completed?(nil)
-                            break
-                            
-                        case .failure(let error):
-                            completed?(error)
-                            break
-                    }
-                }
+        do {
+            try importDockModel(from: .userDirectory)
+        } catch {
+            completed?(error)
+        }
     }
     
     
     // MARK: - Private Methods
     
-    private func importDockModel(from url: URL) throws {
-        guard
-            let dockConfiguration = NSDictionary(contentsOf: url) as? Dictionary<String, Any>
-        else {
-            throw ApplicationError.importDockModelError
-        }
-        
+    private func importDockModel(from userDirectory: URL) throws {
+        let dockConfiguration = try FDSPLoadDockConfiguration(from: userDirectory)
+                    
         if let persistentApplications = dockConfiguration[.PersistentApplications] as? Array<Dictionary<String, Any>> {
             self.dockModel.applications.removeAll()
             persistentApplications.map(toDockEntry(app:)).forEach { entry in

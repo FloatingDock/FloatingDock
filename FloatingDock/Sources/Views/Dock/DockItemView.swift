@@ -35,7 +35,7 @@ struct DockItemView: View {
                 }
             }
             .onTapGesture {
-                launcher.launchApplication(from: entry, completion: nil, error: nil)
+                launcher.launchApplication(from: entry, completionHandler: nil, errorHandler: nil)
             }
     }
     

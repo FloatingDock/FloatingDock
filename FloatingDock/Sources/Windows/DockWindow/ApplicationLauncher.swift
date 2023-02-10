@@ -24,5 +24,5 @@ protocol ApplicationLauncher: ObservableObject {
     typealias CompletionHandler = () -> ()
     typealias ErrorHandler = (Error) -> ()
     
-    func launchApplication(from entry: DockEntry, completion: CompletionHandler?, error: ErrorHandler?)
+    func launchApplication(from entry: DockEntry, completionHandler: CompletionHandler?, errorHandler: ErrorHandler?)
 }

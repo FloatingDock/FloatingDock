@@ -64,16 +64,6 @@ struct OnboardingSummaryView: View, Navigatable {
                         }
                     }
                     
-                    if dockModel.directoriesWithoutPermission.isEmpty {
-                        HStack {
-                            Button("Grant Access to Directories Containing Applications") {
-                                navigate(to: GrantPermissionsToDirectoriesView.Id)
-                            }
-                            .buttonStyle(.link)
-                            Spacer()
-                        }
-                    }
-                    
                     if KeyCommand(name: .DockWindowToggle).key == nil {
                         HStack {
                             Button("Define Hotkey to Toggle the Floating Dock Panel") {
@@ -99,7 +89,7 @@ struct OnboardingSummaryView: View, Navigatable {
     private var dockModel: DockModel
     
     private var areAllMandotaryTaskDone: Bool {
-        return !dockModel.applications.isEmpty && dockModel.directoriesWithoutPermission.isEmpty
+        return !dockModel.applications.isEmpty
     }
 }
 
