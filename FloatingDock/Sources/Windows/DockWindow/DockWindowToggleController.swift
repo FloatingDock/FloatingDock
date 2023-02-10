@@ -25,18 +25,7 @@ import SwiftySandboxFileAccess
 import SwiftUI
 
 
-struct ApplicationLauncherKey: EnvironmentKey {
-    static let defaultValue: any ApplicationLauncher = DockWindowToggleController.shared
-}
-
-extension EnvironmentValues {
-  var applicationLauncher: any ApplicationLauncher {
-    get { self[ApplicationLauncherKey.self] }
-  }
-}
-
-
-class DockWindowToggleController: ApplicationLauncher {
+class DockWindowToggleController {
     
     // MARK: - Public Static Properties
     
@@ -47,7 +36,7 @@ class DockWindowToggleController: ApplicationLauncher {
     
     // MARK: - Private Properties
     
-    private var dockWindowController: DockWindowController? = nil
+    private(set) var dockWindowController: DockWindowController? = nil
     
     
     // MARK: - Initialization
@@ -70,62 +59,18 @@ class DockWindowToggleController: ApplicationLauncher {
         }
     }
     
-    
-    // MARK: - ApplicationLauncher
-    
-    func launchApplication(from entry: DockEntry, completion: CompletionHandler? = nil, error: ErrorHandler? = nil) {
-        let containingFolderUrl = entry.url!.deletingLastPathComponent()
-        let appFilename = entry.url!.lastPathComponent
-
-        SandboxFileAccess
-            .shared
-            .access(
-                fileURL: containingFolderUrl,
-                askIfNecessary: true,
-                fromWindow: self.dockWindowController?.window,
-                persistPermission: true) { result in
-                    switch result {
-                        case .success(let accessInfo):
-                            let appUrl = accessInfo.securityScopedURL?.appendingPathComponent(appFilename)
-
-                            DispatchQueue.main.async {
-                                NSWorkspace.shared.openApplication(at: appUrl!, configuration: {
-                                    let config = NSWorkspace.OpenConfiguration()
-                                    config.activates = true
-                                    
-                                    return config
-                                }()) { app, err in
-                                    if let err {
-                                        DispatchQueue.main.async {
-                                            error?(err)
-                                        }
-                                        return
-                                    }
-                                    
-                                    DispatchQueue.main.async {
-                                        completion?()
-                                        self.closeDockWindow()
-                                    }
-                                }
-                            }
-                            break
-                            
-                        case .failure(let err):
-                            error?(err)
-                            break
-                    }
-                }
-    }
-    
-    
-    // MARK: - Private Methods
-    
-    private func openDockWindow() {
+    func openDockWindow() {
+        guard
+            dockWindowController == nil
+        else {
+            return
+        }
+            
         dockWindowController = DockWindowController(launcher: self)
         dockWindowController?.showWindow(self)
     }
     
-    private func closeDockWindow() {
+    func closeDockWindow() {
         dockWindowController?.close()
         dockWindowController = nil
     }
