@@ -18,6 +18,7 @@
 		E9023393298C37D800CDA6E1 /* DockItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023392298C37D800CDA6E1 /* DockItemView.swift */; };
 		E9023396298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */; };
 		E9023399298CDF5500CDA6E1 /* NSApplication+standardPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */; };
+		E9199CC12996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CC02996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift */; };
 		E935FB9429917F880017FDB9 /* ApplicationLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935FB9329917F880017FDB9 /* ApplicationLauncher.swift */; };
 		E947E5AF298CF03200314F44 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E947E5AE298CF03200314F44 /* Credits.rtf */; };
 		E947E5B6298D2CCB00314F44 /* OnboardingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5B5298D2CCB00314F44 /* OnboardingWindowController.swift */; };
@@ -59,6 +60,7 @@
 		E9023392298C37D800CDA6E1 /* DockItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItemView.swift; sourceTree = "<group>"; };
 		E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SandboxFileAccess+shared.swift"; sourceTree = "<group>"; };
 		E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication+standardPanel.swift"; sourceTree = "<group>"; };
+		E9199CC02996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockWindowToggleController+ApplicationLauncher.swift"; sourceTree = "<group>"; };
 		E935FB9329917F880017FDB9 /* ApplicationLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLauncher.swift; sourceTree = "<group>"; };
 		E947E5AE298CF03200314F44 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		E947E5B5298D2CCB00314F44 /* OnboardingWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWindowController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				E90233862989AD7A00CDA6E1 /* DockWindowToggleController.swift */,
 				E90233892989B12B00CDA6E1 /* DockWindowController.swift */,
 				E935FB9329917F880017FDB9 /* ApplicationLauncher.swift */,
+				E9199CC02996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift */,
 			);
 			path = DockWindow;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				E9D102BA298852F60045D9B0 /* DockModelProvider.swift in Sources */,
 				E9023390298ACD7A00CDA6E1 /* DockEntry+image.swift in Sources */,
 				E947E5C0298E477E00314F44 /* DockModel+filteredData.swift in Sources */,
+				E9199CC12996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift in Sources */,
 				E9D1029B298688700045D9B0 /* SettingsHeaderView.swift in Sources */,
 				E9D102A8298790680045D9B0 /* GeneralSettingsView.swift in Sources */,
 				E935FB9429917F880017FDB9 /* ApplicationLauncher.swift in Sources */,
