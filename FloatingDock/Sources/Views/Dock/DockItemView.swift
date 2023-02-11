@@ -59,6 +59,7 @@ struct DockItemView: View {
         }
     }
     
+    @ObservedObject
     var entry: DockEntry
     
     

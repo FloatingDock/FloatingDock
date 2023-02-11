@@ -34,7 +34,6 @@
 		E947E5C8298F055800314F44 /* LaunchAtLogingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C7298F055800314F44 /* LaunchAtLogingView.swift */; };
 		E947E5CA298F06CB00314F44 /* OnboardingSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C9298F06CB00314F44 /* OnboardingSummaryView.swift */; };
 		E947E5CC298FB77800314F44 /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5CB298FB77800314F44 /* Navigatable.swift */; };
-		E96E41AC29979D7C008376CD /* DockEntry+isRunning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96E41AB29979D7C008376CD /* DockEntry+isRunning.swift */; };
 		E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D10282298678030045D9B0 /* FloatingDockApp.swift */; };
 		E9D10287298678040045D9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10286298678040045D9B0 /* Assets.xcassets */; };
 		E9D1028A298678040045D9B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10289298678040045D9B0 /* Preview Assets.xcassets */; };
@@ -104,7 +103,6 @@
 		E947E5C9298F06CB00314F44 /* OnboardingSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSummaryView.swift; sourceTree = "<group>"; };
 		E947E5CB298FB77800314F44 /* Navigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
 		E947E5CD299058DA00314F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		E96E41AB29979D7C008376CD /* DockEntry+isRunning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockEntry+isRunning.swift"; sourceTree = "<group>"; };
 		E9D1027F298678030045D9B0 /* FloatingDock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingDock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D10282298678030045D9B0 /* FloatingDockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockApp.swift; sourceTree = "<group>"; };
 		E9D10286298678040045D9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -385,7 +383,6 @@
 				E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */,
 				E9D102B9298852F60045D9B0 /* DockModelProvider.swift */,
 				E9D102BD298855C40045D9B0 /* DockModelProvider+importDockSettings.swift */,
-				E96E41AB29979D7C008376CD /* DockEntry+isRunning.swift */,
 			);
 			path = Dock;
 			sourceTree = "<group>";
@@ -515,7 +512,6 @@
 				E902338E298A33B200CDA6E1 /* DockView.swift in Sources */,
 				E947E5B6298D2CCB00314F44 /* OnboardingWindowController.swift in Sources */,
 				E947E5C6298ECE7700314F44 /* DefineHotkeyView.swift in Sources */,
-				E96E41AC29979D7C008376CD /* DockEntry+isRunning.swift in Sources */,
 				E947E5B8298D553E00314F44 /* OnboardingPageController.swift in Sources */,
 				E947E5BE298DB24C00314F44 /* ImportDockConfigurationView.swift in Sources */,
 				E947E5C8298F055800314F44 /* LaunchAtLogingView.swift in Sources */,

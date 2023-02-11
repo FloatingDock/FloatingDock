@@ -18,6 +18,7 @@
 //  limitations under the License.
 //
 
+import AppKit
 import Foundation
 
 class DockEntry: Codable, Identifiable, ObservableObject {
@@ -32,6 +33,13 @@ class DockEntry: Codable, Identifiable, ObservableObject {
     public var bundleIdentifier: String = ""
     @Published
     public var url: URL? = nil
+    @Published
+    public var isRunning: Bool! = false
+    
+    
+    // MARK: - Private Properties
+    
+    private var updateTimer: Timer!
     
     
     // MARK: - Initialization
@@ -41,6 +49,12 @@ class DockEntry: Codable, Identifiable, ObservableObject {
         self.label = label
         self.bundleIdentifier = bundleIdentifier
         self.url = url
+        
+        startTimers()
+    }
+    
+    deinit {
+        updateTimer.invalidate()
     }
     
     
@@ -53,6 +67,8 @@ class DockEntry: Codable, Identifiable, ObservableObject {
         label = try container.decode(String.self, forKey: .label)
         bundleIdentifier = try container.decode(String.self, forKey: .bundleIdentifier)
         url = try? container.decode(URL.self, forKey: .url)
+        
+        startTimers()
     }
     
     func encode(to encoder: Encoder) throws {
@@ -64,6 +80,17 @@ class DockEntry: Codable, Identifiable, ObservableObject {
         if let url {
             try container.encode(url, forKey: .url)
         }
+    }
+    
+    
+    // MARK: - Private Methods
+    
+    private func startTimers() {
+        updateTimer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true, block: { _ in
+            DispatchQueue.main.async {
+                self.isRunning = !NSRunningApplication.runningApplications(withBundleIdentifier: self.bundleIdentifier).isEmpty
+            }
+        })
     }
     
     
