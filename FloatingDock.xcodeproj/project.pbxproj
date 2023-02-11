@@ -34,6 +34,8 @@
 		E947E5C8298F055800314F44 /* LaunchAtLogingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C7298F055800314F44 /* LaunchAtLogingView.swift */; };
 		E947E5CA298F06CB00314F44 /* OnboardingSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C9298F06CB00314F44 /* OnboardingSummaryView.swift */; };
 		E947E5CC298FB77800314F44 /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5CB298FB77800314F44 /* Navigatable.swift */; };
+		E96E41B22997C261008376CD /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = E96E41B12997C261008376CD /* Sparkle */; };
+		E96E41B52997EBD4008376CD /* UpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96E41B42997EBD4008376CD /* UpdateViewModel.swift */; };
 		E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D10282298678030045D9B0 /* FloatingDockApp.swift */; };
 		E9D10287298678040045D9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10286298678040045D9B0 /* Assets.xcassets */; };
 		E9D1028A298678040045D9B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10289298678040045D9B0 /* Preview Assets.xcassets */; };
@@ -103,6 +105,7 @@
 		E947E5C9298F06CB00314F44 /* OnboardingSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSummaryView.swift; sourceTree = "<group>"; };
 		E947E5CB298FB77800314F44 /* Navigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
 		E947E5CD299058DA00314F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E96E41B42997EBD4008376CD /* UpdateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewModel.swift; sourceTree = "<group>"; };
 		E9D1027F298678030045D9B0 /* FloatingDock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingDock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D10282298678030045D9B0 /* FloatingDockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockApp.swift; sourceTree = "<group>"; };
 		E9D10286298678040045D9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9D102A429878E970045D9B0 /* LaunchAtLogin in Frameworks */,
+				E96E41B22997C261008376CD /* Sparkle in Frameworks */,
 				E9D102A129878E6A0045D9B0 /* SwiftKeys in Frameworks */,
 				E947E5BB298D581E00314F44 /* DTOnboarding in Frameworks */,
 			);
@@ -244,6 +248,14 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		E96E41B32997EBB0008376CD /* Updater */ = {
+			isa = PBXGroup;
+			children = (
+				E96E41B42997EBD4008376CD /* UpdateViewModel.swift */,
+			);
+			path = Updater;
+			sourceTree = "<group>";
+		};
 		E9D10276298678030045D9B0 = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +303,7 @@
 				E9D102922986802E0045D9B0 /* Application */,
 				E9D102A9298795B20045D9B0 /* Extensions */,
 				E9D102B12987DBBC0045D9B0 /* Model */,
+				E96E41B32997EBB0008376CD /* Updater */,
 				E9D10295298683230045D9B0 /* Views */,
 				E947E5B3298D2BC600314F44 /* Windows */,
 			);
@@ -426,6 +439,7 @@
 				E9D102A029878E6A0045D9B0 /* SwiftKeys */,
 				E9D102A329878E970045D9B0 /* LaunchAtLogin */,
 				E947E5BA298D581E00314F44 /* DTOnboarding */,
+				E96E41B12997C261008376CD /* Sparkle */,
 			);
 			productName = FloatingDock;
 			productReference = E9D1027F298678030045D9B0 /* FloatingDock.app */;
@@ -462,6 +476,7 @@
 				E9D1029F29878E6A0045D9B0 /* XCRemoteSwiftPackageReference "SwiftKeys" */,
 				E9D102A229878E970045D9B0 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 				E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */,
+				E96E41B02997C261008376CD /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = E9D10280298678030045D9B0 /* Products */;
 			projectDirPath = "";
@@ -531,6 +546,7 @@
 				E9D102AC298795D90045D9B0 /* Bundle+versions.swift in Sources */,
 				E9D102BA298852F60045D9B0 /* DockModelProvider.swift in Sources */,
 				E9023390298ACD7A00CDA6E1 /* DockEntry+image.swift in Sources */,
+				E96E41B52997EBD4008376CD /* UpdateViewModel.swift in Sources */,
 				E9199CC12996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift in Sources */,
 				E9D1029B298688700045D9B0 /* SettingsHeaderView.swift in Sources */,
 				E9D102A8298790680045D9B0 /* GeneralSettingsView.swift in Sources */,
@@ -816,6 +832,14 @@
 				kind = branch;
 			};
 		};
+		E96E41B02997C261008376CD /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		E9D1029F29878E6A0045D9B0 /* XCRemoteSwiftPackageReference "SwiftKeys" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jordanbaird/SwiftKeys.git";
@@ -839,6 +863,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */;
 			productName = DTOnboarding;
+		};
+		E96E41B12997C261008376CD /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E96E41B02997C261008376CD /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 		E9D102A029878E6A0045D9B0 /* SwiftKeys */ = {
 			isa = XCSwiftPackageProductDependency;
