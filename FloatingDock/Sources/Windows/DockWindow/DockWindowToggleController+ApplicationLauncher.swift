@@ -19,7 +19,6 @@
 //
 
 import Foundation
-import SwiftySandboxFileAccess
 import SwiftUI
 
 struct ApplicationLauncherKey: EnvironmentKey {
@@ -36,47 +35,13 @@ extension DockWindowToggleController: ApplicationLauncher {
     
     // MARK: - ApplicationLauncher
     
-    func launchApplication(from entry: DockEntry, completion: CompletionHandler? = nil, error: ErrorHandler? = nil) {
-        let containingFolderUrl = entry.url!.deletingLastPathComponent()
-        let appFilename = entry.url!.lastPathComponent
-
-        SandboxFileAccess
-            .shared
-            .access(
-                fileURL: containingFolderUrl,
-                askIfNecessary: true,
-                fromWindow: self.dockWindowController?.window,
-                persistPermission: true) { result in
-                    switch result {
-                        case .success(let accessInfo):
-                            let appUrl = accessInfo.securityScopedURL?.appendingPathComponent(appFilename)
-
-                            DispatchQueue.main.async {
-                                NSWorkspace.shared.openApplication(at: appUrl!, configuration: {
-                                    let config = NSWorkspace.OpenConfiguration()
-                                    config.activates = true
-                                    
-                                    return config
-                                }()) { app, err in
-                                    if let err {
-                                        DispatchQueue.main.async {
-                                            error?(err)
-                                        }
-                                        return
-                                    }
-                                    
-                                    DispatchQueue.main.async {
-                                        completion?()
-                                        self.closeDockWindow()
-                                    }
-                                }
-                            }
-                            break
-                            
-                        case .failure(let err):
-                            error?(err)
-                            break
-                    }
-                }
+    func launchApplication(from entry: DockEntry, completionHandler: CompletionHandler? = nil, errorHandler: ErrorHandler? = nil) {
+        do {
+            try FDSPOpenApplication(at: entry.url!)
+            completionHandler?()
+            self.closeDockWindow()
+        } catch {
+            errorHandler?(error)
+        }
     }
 }

@@ -19,14 +19,18 @@
 		E9023396298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */; };
 		E9023399298CDF5500CDA6E1 /* NSApplication+standardPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */; };
 		E9199CC12996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CC02996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift */; };
+		E9199CC92996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CC82996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift */; };
+		E9199CCB2996DB4700CD6351 /* FloatingDockServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CCA2996DB4700CD6351 /* FloatingDockServiceProvider.swift */; };
+		E9199CCD2996DB4700CD6351 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CCC2996DB4700CD6351 /* main.swift */; };
+		E9199CD12996DB4700CD6351 /* FloatingDockServiceProvider.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = E9199CC62996DB4700CD6351 /* FloatingDockServiceProvider.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E9199CDA2996DD1900CD6351 /* FloatingDockServiceProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CC82996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift */; };
+		E9199CDC2996EFD000CD6351 /* FloatingDockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CDB2996EFD000CD6351 /* FloatingDockService.swift */; };
 		E935FB9429917F880017FDB9 /* ApplicationLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935FB9329917F880017FDB9 /* ApplicationLauncher.swift */; };
 		E947E5AF298CF03200314F44 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E947E5AE298CF03200314F44 /* Credits.rtf */; };
 		E947E5B6298D2CCB00314F44 /* OnboardingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5B5298D2CCB00314F44 /* OnboardingWindowController.swift */; };
 		E947E5B8298D553E00314F44 /* OnboardingPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5B7298D553E00314F44 /* OnboardingPageController.swift */; };
 		E947E5BB298D581E00314F44 /* DTOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = E947E5BA298D581E00314F44 /* DTOnboarding */; };
 		E947E5BE298DB24C00314F44 /* ImportDockConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5BD298DB24C00314F44 /* ImportDockConfigurationView.swift */; };
-		E947E5C0298E477E00314F44 /* DockModel+filteredData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5BF298E477E00314F44 /* DockModel+filteredData.swift */; };
-		E947E5C2298E492200314F44 /* GrantPermissionsToDirectoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C1298E492200314F44 /* GrantPermissionsToDirectoriesView.swift */; };
 		E947E5C4298ECA0100314F44 /* URL+identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C3298ECA0100314F44 /* URL+identifiable.swift */; };
 		E947E5C6298ECE7700314F44 /* DefineHotkeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C5298ECE7700314F44 /* DefineHotkeyView.swift */; };
 		E947E5C8298F055800314F44 /* LaunchAtLogingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C7298F055800314F44 /* LaunchAtLogingView.swift */; };
@@ -49,6 +53,30 @@
 		E9D102C0298856790045D9B0 /* URL+locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102BF298856790045D9B0 /* URL+locations.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E9199CCF2996DB4700CD6351 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9D10277298678030045D9B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9199CC52996DB4700CD6351;
+			remoteInfo = FloatingDockServiceProvider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E9199CD22996DB4700CD6351 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				E9199CD12996DB4700CD6351 /* FloatingDockServiceProvider.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E902338029895B1800CDA6E1 /* DataImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataImportView.swift; sourceTree = "<group>"; };
 		E90233822989777B00CDA6E1 /* ApplicationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
@@ -61,13 +89,17 @@
 		E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SandboxFileAccess+shared.swift"; sourceTree = "<group>"; };
 		E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication+standardPanel.swift"; sourceTree = "<group>"; };
 		E9199CC02996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockWindowToggleController+ApplicationLauncher.swift"; sourceTree = "<group>"; };
+		E9199CC62996DB4700CD6351 /* FloatingDockServiceProvider.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = FloatingDockServiceProvider.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9199CC82996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockServiceProviderProtocol.swift; sourceTree = "<group>"; };
+		E9199CCA2996DB4700CD6351 /* FloatingDockServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockServiceProvider.swift; sourceTree = "<group>"; };
+		E9199CCC2996DB4700CD6351 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E9199CCE2996DB4700CD6351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9199CDB2996EFD000CD6351 /* FloatingDockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockService.swift; sourceTree = "<group>"; };
 		E935FB9329917F880017FDB9 /* ApplicationLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLauncher.swift; sourceTree = "<group>"; };
 		E947E5AE298CF03200314F44 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		E947E5B5298D2CCB00314F44 /* OnboardingWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWindowController.swift; sourceTree = "<group>"; };
 		E947E5B7298D553E00314F44 /* OnboardingPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageController.swift; sourceTree = "<group>"; };
 		E947E5BD298DB24C00314F44 /* ImportDockConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDockConfigurationView.swift; sourceTree = "<group>"; };
-		E947E5BF298E477E00314F44 /* DockModel+filteredData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockModel+filteredData.swift"; sourceTree = "<group>"; };
-		E947E5C1298E492200314F44 /* GrantPermissionsToDirectoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantPermissionsToDirectoriesView.swift; sourceTree = "<group>"; };
 		E947E5C3298ECA0100314F44 /* URL+identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+identifiable.swift"; sourceTree = "<group>"; };
 		E947E5C5298ECE7700314F44 /* DefineHotkeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineHotkeyView.swift; sourceTree = "<group>"; };
 		E947E5C7298F055800314F44 /* LaunchAtLogingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogingView.swift; sourceTree = "<group>"; };
@@ -95,6 +127,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E9199CC32996DB4700CD6351 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E9D1027C298678030045D9B0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +184,48 @@
 			path = AppKit;
 			sourceTree = "<group>";
 		};
+		E9199CC72996DB4700CD6351 /* FloatingDockServiceProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E9199CD62996DB9900CD6351 /* Sources */,
+				E9199CD72996DBAA00CD6351 /* Resources */,
+			);
+			path = FloatingDockServiceProvider;
+			sourceTree = "<group>";
+		};
+		E9199CD62996DB9900CD6351 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E9199CCC2996DB4700CD6351 /* main.swift */,
+				E9199CCA2996DB4700CD6351 /* FloatingDockServiceProvider.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		E9199CD72996DBAA00CD6351 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9199CCE2996DB4700CD6351 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E9199CD82996DCF200CD6351 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E9199CD92996DD0100CD6351 /* Sources */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E9199CD92996DD0100CD6351 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E9199CC82996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		E947E5B3298D2BC600314F44 /* Windows */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				E947E5BD298DB24C00314F44 /* ImportDockConfigurationView.swift */,
-				E947E5C1298E492200314F44 /* GrantPermissionsToDirectoriesView.swift */,
 				E947E5C5298ECE7700314F44 /* DefineHotkeyView.swift */,
 				E947E5C7298F055800314F44 /* LaunchAtLogingView.swift */,
 				E947E5C9298F06CB00314F44 /* OnboardingSummaryView.swift */,
@@ -182,6 +262,8 @@
 				E9D1029C298689960045D9B0 /* .gitignore */,
 				E9D1029E298689960045D9B0 /* LICENSE.md */,
 				E9D1029D298689960045D9B0 /* README.md */,
+				E9199CD82996DCF200CD6351 /* Common */,
+				E9199CC72996DB4700CD6351 /* FloatingDockServiceProvider */,
 				E9D10281298678030045D9B0 /* FloatingDock */,
 				E9D10280298678030045D9B0 /* Products */,
 			);
@@ -191,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D1027F298678030045D9B0 /* FloatingDock.app */,
+				E9199CC62996DB4700CD6351 /* FloatingDockServiceProvider.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,6 +315,7 @@
 				E9D10282298678030045D9B0 /* FloatingDockApp.swift */,
 				E90233822989777B00CDA6E1 /* ApplicationError.swift */,
 				E90233842989A53400CDA6E1 /* HotkeyNames.swift */,
+				E9199CDB2996EFD000CD6351 /* FloatingDockService.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -308,7 +392,6 @@
 			isa = PBXGroup;
 			children = (
 				E9D102B7298852750045D9B0 /* DockModel.swift */,
-				E947E5BF298E477E00314F44 /* DockModel+filteredData.swift */,
 				E9D102B5298851220045D9B0 /* DockEntry.swift */,
 				E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */,
 				E9D102B9298852F60045D9B0 /* DockModelProvider.swift */,
@@ -320,6 +403,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E9199CC52996DB4700CD6351 /* FloatingDockServiceProvider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9199CD52996DB4700CD6351 /* Build configuration list for PBXNativeTarget "FloatingDockServiceProvider" */;
+			buildPhases = (
+				E9199CC22996DB4700CD6351 /* Sources */,
+				E9199CC32996DB4700CD6351 /* Frameworks */,
+				E9199CC42996DB4700CD6351 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FloatingDockServiceProvider;
+			productName = FloatingDockServiceProvider;
+			productReference = E9199CC62996DB4700CD6351 /* FloatingDockServiceProvider.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
 		E9D1027E298678030045D9B0 /* FloatingDock */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9D1028E298678040045D9B0 /* Build configuration list for PBXNativeTarget "FloatingDock" */;
@@ -327,10 +427,12 @@
 				E9D1027B298678030045D9B0 /* Sources */,
 				E9D1027C298678030045D9B0 /* Frameworks */,
 				E9D1027D298678030045D9B0 /* Resources */,
+				E9199CD22996DB4700CD6351 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E9199CD02996DB4700CD6351 /* PBXTargetDependency */,
 			);
 			name = FloatingDock;
 			packageProductDependencies = (
@@ -353,6 +455,9 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					E9199CC52996DB4700CD6351 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					E9D1027E298678030045D9B0 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -378,11 +483,19 @@
 			projectRoot = "";
 			targets = (
 				E9D1027E298678030045D9B0 /* FloatingDock */,
+				E9199CC52996DB4700CD6351 /* FloatingDockServiceProvider */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E9199CC42996DB4700CD6351 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E9D1027D298678030045D9B0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,6 +509,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E9199CC22996DB4700CD6351 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9199CC92996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift in Sources */,
+				E9199CCB2996DB4700CD6351 /* FloatingDockServiceProvider.swift in Sources */,
+				E9199CCD2996DB4700CD6351 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E9D1027B298678030045D9B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -410,6 +533,7 @@
 				E902338129895B1800CDA6E1 /* DataImportView.swift in Sources */,
 				E9D102B32987DBD30045D9B0 /* SettingsModel.swift in Sources */,
 				E9D102C0298856790045D9B0 /* URL+locations.swift in Sources */,
+				E9199CDC2996EFD000CD6351 /* FloatingDockService.swift in Sources */,
 				E902338A2989B12B00CDA6E1 /* DockWindowController.swift in Sources */,
 				E947E5CA298F06CB00314F44 /* OnboardingSummaryView.swift in Sources */,
 				E90233852989A53400CDA6E1 /* HotkeyNames.swift in Sources */,
@@ -423,22 +547,71 @@
 				E9D102AC298795D90045D9B0 /* Bundle+versions.swift in Sources */,
 				E9D102BA298852F60045D9B0 /* DockModelProvider.swift in Sources */,
 				E9023390298ACD7A00CDA6E1 /* DockEntry+image.swift in Sources */,
-				E947E5C0298E477E00314F44 /* DockModel+filteredData.swift in Sources */,
 				E9199CC12996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift in Sources */,
 				E9D1029B298688700045D9B0 /* SettingsHeaderView.swift in Sources */,
 				E9D102A8298790680045D9B0 /* GeneralSettingsView.swift in Sources */,
 				E935FB9429917F880017FDB9 /* ApplicationLauncher.swift in Sources */,
 				E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */,
-				E947E5C2298E492200314F44 /* GrantPermissionsToDirectoriesView.swift in Sources */,
 				E9D10297298683370045D9B0 /* SettingsView.swift in Sources */,
 				E90233832989777B00CDA6E1 /* ApplicationError.swift in Sources */,
 				E947E5C4298ECA0100314F44 /* URL+identifiable.swift in Sources */,
+				E9199CDA2996DD1900CD6351 /* FloatingDockServiceProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E9199CD02996DB4700CD6351 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E9199CC52996DB4700CD6351 /* FloatingDockServiceProvider */;
+			targetProxy = E9199CCF2996DB4700CD6351 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		E9199CD32996DB4700CD6351 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GQE994U6EG;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FloatingDockServiceProvider/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FloatingDockServiceProvider;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.FloatingDock.FloatingDockServiceProvider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E9199CD42996DB4700CD6351 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GQE994U6EG;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FloatingDockServiceProvider/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FloatingDockServiceProvider;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.FloatingDock.FloatingDockServiceProvider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		E9D1028C298678040045D9B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -555,6 +728,7 @@
 		E9D1028F298678040045D9B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FloatingDock/FloatingDock.entitlements;
@@ -587,6 +761,7 @@
 		E9D10290298678040045D9B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FloatingDock/FloatingDock.entitlements;
@@ -619,6 +794,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E9199CD52996DB4700CD6351 /* Build configuration list for PBXNativeTarget "FloatingDockServiceProvider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9199CD32996DB4700CD6351 /* Debug */,
+				E9199CD42996DB4700CD6351 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E9D1027A298678030045D9B0 /* Build configuration list for PBXProject "FloatingDock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

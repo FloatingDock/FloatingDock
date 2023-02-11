@@ -29,11 +29,4 @@ extension URL {
 
         return URL(filePath: homePath)
     }
-
-    static var dockConfiguration: URL {
-      return userDirectory
-        .appendingPathComponent("Library")
-        .appendingPathComponent("Preferences")
-        .appendingPathComponent("com.apple.dock.plist")
-    }
 }

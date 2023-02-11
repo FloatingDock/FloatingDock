@@ -60,7 +60,6 @@ struct FloatingDockApp: App {
     private let onboardingWindowController = OnboardingWindowController()
     private var isOnboarded: Bool {
         return !DockModelProvider.shared.dockModel.applications.isEmpty
-            && DockModelProvider.shared.dockModel.directoriesWithoutPermission.isEmpty
             && dockWindowToggleCommand.key != nil
     }
     
