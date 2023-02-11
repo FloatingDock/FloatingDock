@@ -4,5 +4,15 @@
 <dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>SUEnableDownloaderService</key>
+	<true/>
+	<key>SUEnableInstallerLauncherService</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>https://floatingdock.github.io/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>QFRBt6XMieSl7lmJ4H/X8OZnaOdj7szl9sF/AQUEktA=</string>
+	<key>SUScheduledCheckInterval</key>
+	<integer>43200</integer>
 </dict>
 </plist>
