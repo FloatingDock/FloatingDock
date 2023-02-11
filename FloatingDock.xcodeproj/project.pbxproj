@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E902337F2988D36C00CDA6E1 /* SwiftySandboxFileAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E902337E2988D36C00CDA6E1 /* SwiftySandboxFileAccess */; };
 		E902338129895B1800CDA6E1 /* DataImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902338029895B1800CDA6E1 /* DataImportView.swift */; };
 		E90233832989777B00CDA6E1 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90233822989777B00CDA6E1 /* ApplicationError.swift */; };
 		E90233852989A53400CDA6E1 /* HotkeyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90233842989A53400CDA6E1 /* HotkeyNames.swift */; };
@@ -16,7 +15,6 @@
 		E902338E298A33B200CDA6E1 /* DockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902338D298A33B200CDA6E1 /* DockView.swift */; };
 		E9023390298ACD7A00CDA6E1 /* DockEntry+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */; };
 		E9023393298C37D800CDA6E1 /* DockItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023392298C37D800CDA6E1 /* DockItemView.swift */; };
-		E9023396298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */; };
 		E9023399298CDF5500CDA6E1 /* NSApplication+standardPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */; };
 		E9199CC12996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CC02996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift */; };
 		E9199CC92996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CC82996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift */; };
@@ -86,7 +84,6 @@
 		E902338D298A33B200CDA6E1 /* DockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockView.swift; sourceTree = "<group>"; };
 		E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockEntry+image.swift"; sourceTree = "<group>"; };
 		E9023392298C37D800CDA6E1 /* DockItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItemView.swift; sourceTree = "<group>"; };
-		E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SandboxFileAccess+shared.swift"; sourceTree = "<group>"; };
 		E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication+standardPanel.swift"; sourceTree = "<group>"; };
 		E9199CC02996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockWindowToggleController+ApplicationLauncher.swift"; sourceTree = "<group>"; };
 		E9199CC62996DB4700CD6351 /* FloatingDockServiceProvider.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = FloatingDockServiceProvider.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +137,6 @@
 			files = (
 				E9D102A429878E970045D9B0 /* LaunchAtLogin in Frameworks */,
 				E9D102A129878E6A0045D9B0 /* SwiftKeys in Frameworks */,
-				E902337F2988D36C00CDA6E1 /* SwiftySandboxFileAccess in Frameworks */,
 				E947E5BB298D581E00314F44 /* DTOnboarding in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,14 +162,6 @@
 				E9023392298C37D800CDA6E1 /* DockItemView.swift */,
 			);
 			path = Dock;
-			sourceTree = "<group>";
-		};
-		E9023394298C4C2E00CDA6E1 /* SwiftySandboxFileAccess */ = {
-			isa = PBXGroup;
-			children = (
-				E9023395298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift */,
-			);
-			path = SwiftySandboxFileAccess;
 			sourceTree = "<group>";
 		};
 		E9023397298CDF3100CDA6E1 /* AppKit */ = {
@@ -364,7 +352,6 @@
 			children = (
 				E9023397298CDF3100CDA6E1 /* AppKit */,
 				E9D102AA298795C20045D9B0 /* Foundation */,
-				E9023394298C4C2E00CDA6E1 /* SwiftySandboxFileAccess */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -438,7 +425,6 @@
 			packageProductDependencies = (
 				E9D102A029878E6A0045D9B0 /* SwiftKeys */,
 				E9D102A329878E970045D9B0 /* LaunchAtLogin */,
-				E902337E2988D36C00CDA6E1 /* SwiftySandboxFileAccess */,
 				E947E5BA298D581E00314F44 /* DTOnboarding */,
 			);
 			productName = FloatingDock;
@@ -475,7 +461,6 @@
 			packageReferences = (
 				E9D1029F29878E6A0045D9B0 /* XCRemoteSwiftPackageReference "SwiftKeys" */,
 				E9D102A229878E970045D9B0 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
-				E902337D2988D36C00CDA6E1 /* XCRemoteSwiftPackageReference "SwiftySandboxFileAccess" */,
 				E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */,
 			);
 			productRefGroup = E9D10280298678030045D9B0 /* Products */;
@@ -542,7 +527,6 @@
 				E9023399298CDF5500CDA6E1 /* NSApplication+standardPanel.swift in Sources */,
 				E90233872989AD7A00CDA6E1 /* DockWindowToggleController.swift in Sources */,
 				E9023393298C37D800CDA6E1 /* DockItemView.swift in Sources */,
-				E9023396298C4C5000CDA6E1 /* SandboxFileAccess+shared.swift in Sources */,
 				E9D102B6298851220045D9B0 /* DockEntry.swift in Sources */,
 				E9D102AC298795D90045D9B0 /* Bundle+versions.swift in Sources */,
 				E9D102BA298852F60045D9B0 /* DockModelProvider.swift in Sources */,
@@ -575,7 +559,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -596,7 +580,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -734,7 +718,7 @@
 				CODE_SIGN_ENTITLEMENTS = FloatingDock/FloatingDock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"FloatingDock/Preview Content\"";
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -767,7 +751,7 @@
 				CODE_SIGN_ENTITLEMENTS = FloatingDock/FloatingDock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"FloatingDock/Preview Content\"";
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -824,14 +808,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E902337D2988D36C00CDA6E1 /* XCRemoteSwiftPackageReference "SwiftySandboxFileAccess" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ConfusedVorlon/SwiftySandboxFileAccess.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 		E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/thbonk/DTOnboarding.git";
@@ -859,11 +835,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E902337E2988D36C00CDA6E1 /* SwiftySandboxFileAccess */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E902337D2988D36C00CDA6E1 /* XCRemoteSwiftPackageReference "SwiftySandboxFileAccess" */;
-			productName = SwiftySandboxFileAccess;
-		};
 		E947E5BA298D581E00314F44 /* DTOnboarding */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */;

@@ -25,17 +25,31 @@ struct DockView: View {
     // MARK: - Public Properties
     
     var body: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.fixed(iconSize + 2), alignment: .center), count: 10)) {
-            ForEach(DockModelProvider.shared.dockModel.applications, id: \.id) { entry in
-                DockItemView(entry: entry)
-                    .frame(width: gridSize, height: gridSize)
+        if DockModelProvider.shared.dockModel.applications.isEmpty {
+            HStack {
+                Text("You haven't imported the macOS Dock configuration.\nPlease open the Onboarding Wizard and setup FloatingDock.")
+                    .lineLimit(20)
+                    .multilineTextAlignment(.center)
+                    .padding()
             }
+            .padding(.all, 10)
+            .frame(width: 400, height: 200)
+        } else {
+            LazyVGrid(columns: Array(repeating: GridItem(.fixed(iconSize + 2), alignment: .center), count: 10)) {
+                ForEach(dockModel.applications, id: \.id) { entry in
+                    DockItemView(entry: entry)
+                        .frame(width: gridSize, height: gridSize)
+                }
+            }
+            .padding(.all, 15)
         }
-        .padding(.all, 15)
     }
     
     
     // MARK: - Private Properties
+    
+    @EnvironmentObject
+    private var dockModel: DockModel
     
     private var iconSize: CGFloat {
         SettingsModel.shared.iconSize
