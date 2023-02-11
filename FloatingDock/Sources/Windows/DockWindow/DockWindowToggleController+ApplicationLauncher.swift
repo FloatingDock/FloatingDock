@@ -39,6 +39,7 @@ extension DockWindowToggleController: ApplicationLauncher {
         do {
             try FDSPOpenApplication(at: entry.url!)
             completionHandler?()
+            self.closeDockWindow()
         } catch {
             errorHandler?(error)
         }

@@ -29,7 +29,7 @@ import Foundation
     func loadDockConfiguration(from userHome: URL, with reply: @escaping (Dictionary<String, Any>?) -> Void)
     
     /// open an application
-    func openApplication(at applicationURL: URL, completionHandler: ((NSRunningApplication?, Error?) -> Void)?)
+    func openApplication(at applicationURL: URL, completionHandler: ((Error?) -> Void)?)
 }
 
 /*

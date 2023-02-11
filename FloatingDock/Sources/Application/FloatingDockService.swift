@@ -73,14 +73,12 @@ func FDSPOpenApplication(at applicationURL: URL) throws {
     connectionToService.resume()
     
     let replyLock = DispatchGroup()
-    var runningApplication: NSRunningApplication?
     var openError: Error?
     
     if let proxy = connectionToService.remoteObjectProxy as? FloatingDockServiceProviderProtocol {
         replyLock.enter()
         
-        proxy.openApplication(at: applicationURL) { runningApp, err in
-            runningApplication = runningApp
+        proxy.openApplication(at: applicationURL) { err in
             openError = err
             replyLock.leave()
         }
@@ -100,9 +98,9 @@ func FDSPOpenApplication(at applicationURL: URL) throws {
         throw openError
     }
     
-    guard
+    /*guard
         let _ = runningApplication
     else {
         throw FDSPError.openingApplication
-    }
+    }*/
 }

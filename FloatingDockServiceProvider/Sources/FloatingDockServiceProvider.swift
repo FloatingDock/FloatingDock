@@ -39,17 +39,26 @@ class FloatingDockServiceProvider: NSObject, FloatingDockServiceProviderProtocol
     }
     
     /// open an application
-    @objc func openApplication(at applicationURL: URL, completionHandler: ((NSRunningApplication?, Error?) -> Void)?) {
+    @objc func openApplication(at applicationURL: URL, completionHandler: ((Error?) -> Void)?) {
+        var error: Error?
+        let replyLock = DispatchGroup()
+        replyLock.enter()
+        
         NSWorkspace
             .shared
-            .open(
-                applicationURL,
+            .openApplication(
+                at: applicationURL,
                 configuration: {
                     let configuration = NSWorkspace.OpenConfiguration()
                     configuration.activates = true
                     return configuration
-                }()) { runningApp, error in
-                    completionHandler?(runningApp, error)
+                }()) { runningApp, err in
+                    error = err
+                    replyLock.leave()
                 }
+        
+        _ = replyLock.wait(timeout: .now() + 5)
+        
+        completionHandler?(error)
     }
 }
