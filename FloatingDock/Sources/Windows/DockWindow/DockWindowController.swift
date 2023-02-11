@@ -56,6 +56,7 @@ class DockWindowController: NSWindowController {
         
         window?.contentViewController = NSHostingController(
             rootView: DockView()
+                .environmentObject(DockModelProvider.shared.dockModel)
                 .background(SettingsModel.shared.dockBackgroundColor.opacity(SettingsModel.shared.dockBackgroundOpacity))
                 .cornerRadius(10))
         

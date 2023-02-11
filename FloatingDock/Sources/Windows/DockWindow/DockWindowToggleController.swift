@@ -21,7 +21,6 @@
 import AppKit
 import CoreServices
 import Foundation
-import SwiftySandboxFileAccess
 import SwiftUI
 
 
