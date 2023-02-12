@@ -35,7 +35,7 @@ struct DockView: View {
             .padding(.all, 10)
             .frame(width: 400, height: 200)
         } else {
-            LazyVGrid(columns: Array(repeating: GridItem(.fixed(iconSize + 2), alignment: .center), count: 10)) {
+            LazyVGrid(columns: Array(repeating: GridItem(.fixed(iconSize + 2), alignment: .center), count: iconsPerRow)) {
                 ForEach(dockModel.applications, id: \.id) { entry in
                     DockItemView(entry: entry)
                         .frame(width: gridSize, height: gridSize)
@@ -51,12 +51,17 @@ struct DockView: View {
     @EnvironmentObject
     private var dockModel: DockModel
     
-    private var iconSize: CGFloat {
+    private var iconsPerRow: Int {
+        NSLog("iconsPerRow = \(Int(SettingsModel.shared.iconsPerRow))")
+        return Int(SettingsModel.shared.iconsPerRow)
+    }
+    
+    private var iconSize: Double {
         SettingsModel.shared.iconSize
     }
     
     private var gridSize: CGFloat {
-        iconSize + 2 * (iconSize / 48)
+        CGFloat(iconSize) + 2.0 * (CGFloat(iconSize) / 48.0)
     }
 }
 

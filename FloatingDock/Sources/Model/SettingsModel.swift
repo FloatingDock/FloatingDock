@@ -22,12 +22,15 @@ import Foundation
 import SwiftUI
 
 extension String {
-    static let ImportDockSettingsOnLaunchSettingsKey = "importDockSettingsOnLaunch"
     static let DockModelSettingsKey = "dockModel"
+    static let DockIconsPerRow = "dockIconsPerRow"
+    static let DockIconSize = "dockIconSize"
+    static let DockIconScaleFactor = "dockIconScaleFactor"
+    static let DockBackgroundColor = "dockBackgroundColor"
+    static let DockBackgroundOpacity = "dockBackgroundOpacity"
 }
 
 class SettingsModel {
-    
     
     // MARK: - Shared instance
     
@@ -38,15 +41,6 @@ class SettingsModel {
     
     // MARK: - Public Properties
     
-    var importDockSettingsOnLaunch: Bool {
-        get {
-            UserDefaults.standard.bool(forKey: .ImportDockSettingsOnLaunchSettingsKey)
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: .ImportDockSettingsOnLaunchSettingsKey)
-        }
-    }
-    
     var dockModel: Data? {
         get {
             UserDefaults.standard.data(forKey: .DockModelSettingsKey)
@@ -56,10 +50,59 @@ class SettingsModel {
         }
     }
     
-    var iconSize: CGFloat = 64
-    var scaleFactor = 1.5
-    var dockBackgroundColor = Color(red: 0.2, green: 0.2, blue: 0.2)
-    var dockBackgroundOpacity = 0.75
+    var iconsPerRow: Double {
+        get {
+            let val = UserDefaults.standard.double(forKey: .DockIconsPerRow)
+            
+            return val == 0 ? 10 : val
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: .DockIconsPerRow)
+        }
+    }
+    
+    var iconSize: Double {
+        get {
+            let val = UserDefaults.standard.double(forKey: .DockIconSize)
+            
+            return val == 0 ? 64 : val
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: .DockIconSize)
+        }
+    }
+    var scaleFactor: Double {
+        get {
+            let val = UserDefaults.standard.double(forKey: .DockIconScaleFactor)
+            
+            return val == 0.0 ? 1.5 : val
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: .DockIconScaleFactor)
+        }
+    }
+    var dockBackgroundColor: Color {
+        get {
+            if let val = UserDefaults.standard.string(forKey: .DockBackgroundColor) {
+                return Color(rawValue: val)!
+            }
+            
+            return Color(red: 0.2, green: 0.2, blue: 0.2)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: .DockBackgroundColor)
+        }
+    }
+    var dockBackgroundOpacity: Double {
+        get {
+            let val = UserDefaults.standard.double(forKey: .DockBackgroundOpacity)
+            
+            return val == 0.0 ? 0.75 : val
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: .DockBackgroundOpacity)
+        }
+    }
     
     
     // MARK: - Initialization

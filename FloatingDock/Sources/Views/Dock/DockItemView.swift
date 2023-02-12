@@ -28,7 +28,7 @@ struct DockItemView: View {
         ZStack {
             entry.image!
                 .resizable()
-                .frame(width: iconSize, height: iconSize)
+                .frame(width: CGFloat(iconSize), height: CGFloat(iconSize))
                 .scaleEffect(scale)
             
             if self.entry.isRunning {
@@ -71,7 +71,7 @@ struct DockItemView: View {
     private var launcher
     
     private let indicatorSize = 8.0
-    private var iconSize: CGFloat {
+    private var iconSize: Double {
         SettingsModel.shared.iconSize
     }
 }
