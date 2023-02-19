@@ -91,6 +91,22 @@
                </EnvironmentBuildable>
             </ActionContent>
          </ExecutionAction>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Export and notarize"
+               scriptText = "# Customizable variables&#10;# find with `security find-identity -p basic -v`&#10;SIGN_IDENTITY=&quot;2A7EE948E3C71493C8CA7B9E2D8EC7640778109A&quot;&#10;&#10;# Set export path and initialize the directory&#10;EXPORT_PATH=&quot;$SRCROOT/Archive&quot;&#10;mkdir -p $EXPORT_PATH&#10;&#10;# Export the archive&#10;/usr/bin/xcodebuild -exportArchive -archivePath &quot;$ARCHIVE_PATH&quot; -exportOptionsPlist &quot;$SRCROOT/ExportOptions.plist&quot; -exportPath &quot;$EXPORT_PATH&quot;&#10;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "E9D1027E298678030045D9B0"
+                     BuildableName = "FloatingDock.app"
+                     BlueprintName = "FloatingDock"
+                     ReferencedContainer = "container:FloatingDock.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
       </PostActions>
    </ArchiveAction>
 </Scheme>
