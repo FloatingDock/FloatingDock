@@ -18,7 +18,6 @@
 //  limitations under the License.
 //
 
-import Sparkle
 import SwiftKeys
 import SwiftUI
 
@@ -43,8 +42,6 @@ struct FloatingDockApp: App {
             Button("Open Onboarding Panel...", action: openOnboardingWindow)
             Divider()
             Button("About Floating Dock", action: NSApplication.shared.showAboutPanel)
-            Button("Check for updates...", action: updaterController.updater.checkForUpdates)
-                .disabled(!updateViewModel.canCheckForUpdates)
             Divider()
             Button("Quit Floating Dock") {
                 NSApplication.shared.terminate(self)
@@ -59,8 +56,6 @@ struct FloatingDockApp: App {
     
     // MARK: - Private Properties
     
-    private let updaterController: SPUStandardUpdaterController
-    private let updateViewModel: UpdateViewModel
     private let dockWindowToggleCommand = KeyCommand(name: .DockWindowToggle)
     private let onboardingWindowController = OnboardingWindowController()
     private var isOnboarded: Bool {
@@ -72,9 +67,6 @@ struct FloatingDockApp: App {
     // MARK: - Initialization
     
     init() {
-        updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
-        updateViewModel = UpdateViewModel(updater: updaterController.updater)
-        
         dockWindowToggleCommand.observe(.keyDown, handler: toggleDockWindow)
         showOnboardingWindowIfTaskAreOpen()
     }

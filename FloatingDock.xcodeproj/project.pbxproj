@@ -33,8 +33,6 @@
 		E947E5C8298F055800314F44 /* LaunchAtLogingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C7298F055800314F44 /* LaunchAtLogingView.swift */; };
 		E947E5CA298F06CB00314F44 /* OnboardingSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5C9298F06CB00314F44 /* OnboardingSummaryView.swift */; };
 		E947E5CC298FB77800314F44 /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5CB298FB77800314F44 /* Navigatable.swift */; };
-		E96E41B22997C261008376CD /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = E96E41B12997C261008376CD /* Sparkle */; };
-		E96E41B52997EBD4008376CD /* UpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96E41B42997EBD4008376CD /* UpdateViewModel.swift */; };
 		E96E41B82998ECBE008376CD /* Color+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96E41B72998ECBE008376CD /* Color+RawRepresentable.swift */; };
 		E96E41BA2998EE7C008376CD /* UserInterfaceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96E41B92998EE7C008376CD /* UserInterfaceSettingsView.swift */; };
 		E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D10282298678030045D9B0 /* FloatingDockApp.swift */; };
@@ -104,7 +102,6 @@
 		E947E5C9298F06CB00314F44 /* OnboardingSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSummaryView.swift; sourceTree = "<group>"; };
 		E947E5CB298FB77800314F44 /* Navigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
 		E947E5CD299058DA00314F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		E96E41B42997EBD4008376CD /* UpdateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewModel.swift; sourceTree = "<group>"; };
 		E96E41B72998ECBE008376CD /* Color+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+RawRepresentable.swift"; sourceTree = "<group>"; };
 		E96E41B92998EE7C008376CD /* UserInterfaceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceSettingsView.swift; sourceTree = "<group>"; };
 		E9AA03E829A0F30B009B3CD0 /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
@@ -140,7 +137,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9D102A429878E970045D9B0 /* LaunchAtLogin in Frameworks */,
-				E96E41B22997C261008376CD /* Sparkle in Frameworks */,
 				E9D102A129878E6A0045D9B0 /* SwiftKeys in Frameworks */,
 				E947E5BB298D581E00314F44 /* DTOnboarding in Frameworks */,
 			);
@@ -249,14 +245,6 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		E96E41B32997EBB0008376CD /* Updater */ = {
-			isa = PBXGroup;
-			children = (
-				E96E41B42997EBD4008376CD /* UpdateViewModel.swift */,
-			);
-			path = Updater;
-			sourceTree = "<group>";
-		};
 		E96E41B62998EC9F008376CD /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,7 +301,6 @@
 				E9D102922986802E0045D9B0 /* Application */,
 				E9D102A9298795B20045D9B0 /* Extensions */,
 				E9D102B12987DBBC0045D9B0 /* Model */,
-				E96E41B32997EBB0008376CD /* Updater */,
 				E9D10295298683230045D9B0 /* Views */,
 				E947E5B3298D2BC600314F44 /* Windows */,
 			);
@@ -449,7 +436,6 @@
 				E9D102A029878E6A0045D9B0 /* SwiftKeys */,
 				E9D102A329878E970045D9B0 /* LaunchAtLogin */,
 				E947E5BA298D581E00314F44 /* DTOnboarding */,
-				E96E41B12997C261008376CD /* Sparkle */,
 			);
 			productName = FloatingDock;
 			productReference = E9D1027F298678030045D9B0 /* FloatingDock.app */;
@@ -463,7 +449,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					E9199CC52996DB4700CD6351 = {
 						CreatedOnToolsVersion = 14.2;
@@ -486,7 +472,6 @@
 				E9D1029F29878E6A0045D9B0 /* XCRemoteSwiftPackageReference "SwiftKeys" */,
 				E9D102A229878E970045D9B0 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 				E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */,
-				E96E41B02997C261008376CD /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = E9D10280298678030045D9B0 /* Products */;
 			projectDirPath = "";
@@ -557,7 +542,6 @@
 				E9D102AC298795D90045D9B0 /* Bundle+versions.swift in Sources */,
 				E9D102BA298852F60045D9B0 /* DockModelProvider.swift in Sources */,
 				E9023390298ACD7A00CDA6E1 /* DockEntry+image.swift in Sources */,
-				E96E41B52997EBD4008376CD /* UpdateViewModel.swift in Sources */,
 				E9199CC12996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift in Sources */,
 				E9D102A8298790680045D9B0 /* GeneralSettingsView.swift in Sources */,
 				E935FB9429917F880017FDB9 /* ApplicationLauncher.swift in Sources */,
@@ -585,7 +569,8 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 50;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -606,7 +591,8 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 50;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -655,6 +641,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -715,6 +702,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -745,7 +733,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 50;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FloatingDock/Preview Content\"";
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -781,7 +770,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 50;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FloatingDock/Preview Content\"";
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -848,14 +838,6 @@
 				kind = branch;
 			};
 		};
-		E96E41B02997C261008376CD /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		E9D1029F29878E6A0045D9B0 /* XCRemoteSwiftPackageReference "SwiftKeys" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jordanbaird/SwiftKeys.git";
@@ -879,11 +861,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */;
 			productName = DTOnboarding;
-		};
-		E96E41B12997C261008376CD /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E96E41B02997C261008376CD /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
 		};
 		E9D102A029878E6A0045D9B0 /* SwiftKeys */ = {
 			isa = XCSwiftPackageProductDependency;
