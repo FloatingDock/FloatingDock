@@ -49,6 +49,7 @@
 		E9D102BA298852F60045D9B0 /* DockModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102B9298852F60045D9B0 /* DockModelProvider.swift */; };
 		E9D102BE298855C40045D9B0 /* DockModelProvider+importDockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102BD298855C40045D9B0 /* DockModelProvider+importDockSettings.swift */; };
 		E9D102C0298856790045D9B0 /* URL+locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102BF298856790045D9B0 /* URL+locations.swift */; };
+		E9E58A6B2AB5B2C30086145F /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = E9E58A6A2AB5B2C30086145F /* Sparkle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9D102A429878E970045D9B0 /* LaunchAtLogin in Frameworks */,
+				E9E58A6B2AB5B2C30086145F /* Sparkle in Frameworks */,
 				E9D102A129878E6A0045D9B0 /* SwiftKeys in Frameworks */,
 				E947E5BB298D581E00314F44 /* DTOnboarding in Frameworks */,
 			);
@@ -436,6 +438,7 @@
 				E9D102A029878E6A0045D9B0 /* SwiftKeys */,
 				E9D102A329878E970045D9B0 /* LaunchAtLogin */,
 				E947E5BA298D581E00314F44 /* DTOnboarding */,
+				E9E58A6A2AB5B2C30086145F /* Sparkle */,
 			);
 			productName = FloatingDock;
 			productReference = E9D1027F298678030045D9B0 /* FloatingDock.app */;
@@ -449,7 +452,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					E9199CC52996DB4700CD6351 = {
 						CreatedOnToolsVersion = 14.2;
@@ -472,6 +475,7 @@
 				E9D1029F29878E6A0045D9B0 /* XCRemoteSwiftPackageReference "SwiftKeys" */,
 				E9D102A229878E970045D9B0 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 				E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */,
+				E9E58A692AB5B2C30086145F /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = E9D10280298678030045D9B0 /* Products */;
 			projectDirPath = "";
@@ -569,7 +573,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 51;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -591,7 +595,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 51;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -612,6 +616,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -645,6 +650,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -673,6 +679,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -706,6 +713,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -733,7 +741,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 51;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FloatingDock/Preview Content\"";
 				DEVELOPMENT_TEAM = GQE994U6EG;
@@ -770,7 +778,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 51;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FloatingDock/Preview Content\"";
 				DEVELOPMENT_TEAM = GQE994U6EG;
@@ -854,6 +862,14 @@
 				kind = branch;
 			};
 		};
+		E9E58A692AB5B2C30086145F /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -871,6 +887,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E9D102A229878E970045D9B0 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
+		};
+		E9E58A6A2AB5B2C30086145F /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9E58A692AB5B2C30086145F /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
