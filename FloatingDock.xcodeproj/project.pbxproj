@@ -35,6 +35,7 @@
 		E947E5CC298FB77800314F44 /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947E5CB298FB77800314F44 /* Navigatable.swift */; };
 		E96E41B82998ECBE008376CD /* Color+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96E41B72998ECBE008376CD /* Color+RawRepresentable.swift */; };
 		E96E41BA2998EE7C008376CD /* UserInterfaceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96E41B92998EE7C008376CD /* UserInterfaceSettingsView.swift */; };
+		E9BA47182AC0408C008C7EB1 /* UpdaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BA47172AC0408C008C7EB1 /* UpdaterModel.swift */; };
 		E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D10282298678030045D9B0 /* FloatingDockApp.swift */; };
 		E9D10287298678040045D9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10286298678040045D9B0 /* Assets.xcassets */; };
 		E9D1028A298678040045D9B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D10289298678040045D9B0 /* Preview Assets.xcassets */; };
@@ -106,6 +107,7 @@
 		E96E41B72998ECBE008376CD /* Color+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+RawRepresentable.swift"; sourceTree = "<group>"; };
 		E96E41B92998EE7C008376CD /* UserInterfaceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceSettingsView.swift; sourceTree = "<group>"; };
 		E9AA03E829A0F30B009B3CD0 /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
+		E9BA47172AC0408C008C7EB1 /* UpdaterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterModel.swift; sourceTree = "<group>"; };
 		E9D1027F298678030045D9B0 /* FloatingDock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingDock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D10282298678030045D9B0 /* FloatingDockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockApp.swift; sourceTree = "<group>"; };
 		E9D10286298678040045D9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D102B22987DBD30045D9B0 /* SettingsModel.swift */,
+				E9BA47172AC0408C008C7EB1 /* UpdaterModel.swift */,
 				E9D102B4298850FF0045D9B0 /* Dock */,
 			);
 			path = Model;
@@ -549,6 +552,7 @@
 				E9199CC12996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift in Sources */,
 				E9D102A8298790680045D9B0 /* GeneralSettingsView.swift in Sources */,
 				E935FB9429917F880017FDB9 /* ApplicationLauncher.swift in Sources */,
+				E9BA47182AC0408C008C7EB1 /* UpdaterModel.swift in Sources */,
 				E9D10283298678030045D9B0 /* FloatingDockApp.swift in Sources */,
 				E9D10297298683370045D9B0 /* SettingsView.swift in Sources */,
 				E90233832989777B00CDA6E1 /* ApplicationError.swift in Sources */,
