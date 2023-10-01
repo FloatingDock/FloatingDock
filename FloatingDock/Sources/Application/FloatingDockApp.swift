@@ -41,6 +41,7 @@ struct FloatingDockApp: App {
             Divider()
             Button("Settings...", action: NSApplication.shared.showAppSettings)
             Button("Open Onboarding Panel...", action: openOnboardingWindow)
+            Button("Import Dock Settings", action: DockModelProvider.shared.importDockSettings)
             Divider()
             Button("Update Floasting Dock...", action: self.updaterController.updater.checkForUpdates)
                 .disabled(!updaterModel.canCheckForUpdates)

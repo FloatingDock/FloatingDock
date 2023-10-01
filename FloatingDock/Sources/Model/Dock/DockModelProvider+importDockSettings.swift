@@ -20,6 +20,7 @@
 
 import AppKit
 import Foundation
+import SwiftUI
 
 fileprivate extension String {
     static let PersistentApplications = "persistent-apps"
@@ -33,11 +34,23 @@ fileprivate extension String {
 
 extension DockModelProvider {
     
-    func importDockSettings(_ window: NSWindow?, completed: ((Error?) -> ())? = nil) {
+    func importDockSettings(_ window: NSWindow? = nil, completed: ((Error?) -> ())? = nil) {
         do {
             try importDockModel(from: .userDirectory)
         } catch {
             completed?(error)
+        }
+    }
+    
+    func importDockSettings() {
+        self.importDockSettings { error in
+            if let error {
+                let alert = NSAlert(error: error)
+                
+                alert.alertStyle = .critical
+                alert.informativeText = "Error while importing macOS Dock model."
+                alert.runModal()
+            }
         }
     }
     
