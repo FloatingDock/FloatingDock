@@ -39,7 +39,7 @@ struct FloatingDockApp: App {
         MenuBarExtra("Floating Dock", systemImage: "menubar.dock.rectangle.badge.record") {
             Button("Toggle Floating Dock Panel", action: toggleDockWindow)
             Divider()
-            Button("Settings...", action: NSApplication.shared.showAppSettings)
+            SettingsLink(label: { Text("Settings...") })
             Button("Open Onboarding Panel...", action: openOnboardingWindow)
             Button("Import Dock Settings", action: DockModelProvider.shared.importDockSettings)
             Divider()
