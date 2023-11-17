@@ -22,15 +22,6 @@ import AppKit
 
 extension NSApplication {
     
-    func showAppSettings() {
-        DispatchQueue.main.async {
-            NSApp.activate(ignoringOtherApps: true)
-        }
-        DispatchQueue.main.async {
-            NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
-        }
-    }
-    
     func showAboutPanel() {
         DispatchQueue.main.async {
             NSApp.activate(ignoringOtherApps: true)

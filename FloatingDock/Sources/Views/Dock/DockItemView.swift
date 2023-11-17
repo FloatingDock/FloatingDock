@@ -25,20 +25,41 @@ struct DockItemView: View {
     // MARK: - Public Properties
     
     var body: some View {
-        entry.image!
-            .resizable()
-            .frame(width: iconSize, height: iconSize)
-            .scaleEffect(scale)
-            .onHover { hovered in
-                withAnimation(.linear(duration: 0.2)) {
-                    scale = hovered ? SettingsModel.shared.scaleFactor : 1.0
+        ZStack {
+            entry.image!
+                .resizable()
+                .frame(width: CGFloat(iconSize), height: CGFloat(iconSize))
+                .scaleEffect(scale)
+            
+            if self.entry.isRunning {
+                VStack {
+                    Spacer()
+                    HStack {
+                        ZStack {
+                            Circle()
+                                .foregroundColor(.green)
+                                .frame(width: indicatorSize, height: indicatorSize)
+                                .blur(radius: indicatorSize / 3)
+                            Circle()
+                                .foregroundColor(.green)
+                                .frame(width: indicatorSize, height: indicatorSize)
+                        }
+                        Spacer()
+                    }
                 }
             }
-            .onTapGesture {
-                NotificationCenter.default.post(name: .OpenAppNotification, object: entry)
+        }
+        .onHover { hovered in
+            withAnimation(.linear(duration: 0.2)) {
+                scale = hovered ? SettingsModel.shared.scaleFactor : 1.0
             }
+        }
+        .onTapGesture {
+            launcher.launchApplication(from: entry, completionHandler: nil, errorHandler: nil)
+        }
     }
     
+    @ObservedObject
     var entry: DockEntry
     
     
@@ -46,8 +67,11 @@ struct DockItemView: View {
     
     @State
     private var scale = 1.0
+    @Environment(\.applicationLauncher)
+    private var launcher
     
-    private var iconSize: CGFloat {
+    private let indicatorSize = 8.0
+    private var iconSize: Double {
         SettingsModel.shared.iconSize
     }
 }

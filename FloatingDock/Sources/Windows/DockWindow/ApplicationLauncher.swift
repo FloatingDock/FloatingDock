@@ -1,8 +1,8 @@
 //
-//  DockModel+filteredData.swift
+//  ApplicationLauncher.swift
 //  FloatingDock
 //
-//  Created by Thomas Bonk on 04.02.23.
+//  Created by Thomas Bonk on 06.02.23.
 //  Copyright 2023 Thomas Bonk <thomas@meandmymac.de>
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,18 +19,10 @@
 //
 
 import Foundation
-import SwiftySandboxFileAccess
 
-extension DockModel {
+protocol ApplicationLauncher: ObservableObject {
+    typealias CompletionHandler = () -> ()
+    typealias ErrorHandler = (Error) -> ()
     
-    var directoriesWithoutPermission: [URL] {
-        return Array(Set(applications
-            .filter { $0.url != nil }
-            .map { $0.url!.deletingLastPathComponent() }
-            .filter { url in
-                let accessInfo = SandboxFileAccess.shared.accessInfo(forFileURL: url)
-                
-                return accessInfo.securityScopedURL == nil
-            }))
-    }
+    func launchApplication(from entry: DockEntry, completionHandler: CompletionHandler?, errorHandler: ErrorHandler?)
 }

@@ -18,13 +18,11 @@
 //  limitations under the License.
 //
 
+import AppUpdater
 import SwiftKeys
 import SwiftUI
 
 extension NSNotification.Name {
-    // Launch an application
-    static let OpenAppNotification = NSNotification.Name(rawValue: "___OpenAppNotification___")
-    
     // Navigation in the Onboarding UI
     static let OnboardingNavigateBack = NSNotification.Name(rawValue: "___OnboardingNavigateBack___")
     static let OnboardingNavigateForward = NSNotification.Name(rawValue: "__OnboardingNavigateForward__")
@@ -41,10 +39,12 @@ struct FloatingDockApp: App {
         MenuBarExtra("Floating Dock", systemImage: "menubar.dock.rectangle.badge.record") {
             Button("Toggle Floating Dock Panel", action: toggleDockWindow)
             Divider()
-            Button("Settings...", action: NSApplication.shared.showAppSettings)
+            SettingsLink(label: { Text("Settings...") })
             Button("Open Onboarding Panel...", action: openOnboardingWindow)
+            Button("Import Dock Settings", action: DockModelProvider.shared.importDockSettings)
             Divider()
-            Button("About Floating Dock", action: NSApplication.shared.showAboutPanel)
+            Button("Check For Update...", action: checkUpdate)
+            Button("About Floating Dock...", action: NSApplication.shared.showAboutPanel)
             Divider()
             Button("Quit Floating Dock") {
                 NSApplication.shared.terminate(self)
@@ -59,11 +59,11 @@ struct FloatingDockApp: App {
     
     // MARK: - Private Properties
     
+    private let updater = AppUpdater(owner: "FloatingDock", repo: "FloatingDock")
     private let dockWindowToggleCommand = KeyCommand(name: .DockWindowToggle)
     private let onboardingWindowController = OnboardingWindowController()
     private var isOnboarded: Bool {
         return !DockModelProvider.shared.dockModel.applications.isEmpty
-            && DockModelProvider.shared.dockModel.directoriesWithoutPermission.isEmpty
             && dockWindowToggleCommand.key != nil
     }
     
@@ -72,17 +72,28 @@ struct FloatingDockApp: App {
     
     init() {
         dockWindowToggleCommand.observe(.keyDown, handler: toggleDockWindow)
-        showOnboardingWindowIfTaskAreOpen()
+        showOnboardingWindowIfTasksAreOpen()
+        importDockModel()
     }
     
     
     // MARK: - Private Methods
     
+    private func checkUpdate() {
+        updater.check().catch(policy: .allErrors) { error in
+            if error.isCancelled {
+                // promise is cancelled if we are already up-to-date
+            } else {
+                // show alert for this error
+            }
+        }
+    }
+    
     private func toggleDockWindow() {
         DockWindowToggleController.shared.toggleDockWindow()
     }
     
-    private func showOnboardingWindowIfTaskAreOpen() {
+    private func showOnboardingWindowIfTasksAreOpen() {
         DispatchQueue.main.async {
             if !isOnboarded {
                 onboardingWindowController.showWindow(self)
@@ -93,6 +104,16 @@ struct FloatingDockApp: App {
     private func openOnboardingWindow() {
         DispatchQueue.main.async {
             onboardingWindowController.showWindow(self)
+        }
+    }
+    
+    private func importDockModel() {
+        if isOnboarded && SettingsModel.shared.importDockSettingsOnLaunch {
+            DockModelProvider.shared.importDockSettings { error in
+                if error == nil {
+                    try? DockModelProvider.shared.saveModel()
+                }
+            }
         }
     }
 }

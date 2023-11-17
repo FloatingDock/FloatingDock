@@ -19,8 +19,10 @@
 //
 
 import AppKit
+import CoreServices
 import Foundation
-import SwiftySandboxFileAccess
+import SwiftUI
+
 
 class DockWindowToggleController {
     
@@ -33,17 +35,12 @@ class DockWindowToggleController {
     
     // MARK: - Private Properties
     
-    private var dockWindowController: DockWindowController? = nil
+    private(set) var dockWindowController: DockWindowController? = nil
     
     
     // MARK: - Initialization
     
     private init() {
-        NotificationCenter.default.addObserver(
-            forName: .OpenAppNotification,
-            object: nil,
-            queue: OperationQueue.main,
-            using: startApp(notification:))
     }
     
     deinit {
@@ -61,45 +58,19 @@ class DockWindowToggleController {
         }
     }
     
-    
-    // MARK: - Private Methods
-    
-    private func openDockWindow() {
-        dockWindowController = DockWindowController()
+    func openDockWindow() {
+        guard
+            dockWindowController == nil
+        else {
+            return
+        }
+            
+        dockWindowController = DockWindowController(launcher: self)
         dockWindowController?.showWindow(self)
     }
     
-    private func closeDockWindow() {
+    func closeDockWindow() {
         dockWindowController?.close()
         dockWindowController = nil
-    }
-    
-    private func startApp(notification: Notification) {
-        let entry = notification.object as! DockEntry
-        let containingFolderUrl = entry.url!.deletingLastPathComponent()
-        let appFilename = entry.url!.lastPathComponent
-        
-        SandboxFileAccess
-            .shared
-            .access(
-                fileURL: containingFolderUrl,
-                askIfNecessary: true,
-                fromWindow: dockWindowController?.window,
-                persistPermission: true) { result in
-                    switch result {
-                        case .success(let accessInfo):
-                            let appUrl = accessInfo.securityScopedURL?.appendingPathComponent(appFilename)
-                            DispatchQueue.main.async {
-                                NSWorkspace.shared.open(appUrl!)
-                            }
-                            DispatchQueue.main.async {
-                                self.closeDockWindow()
-                            }
-                            break
-                            
-                        case .failure(_):
-                            break
-                    }
-                }
     }
 }
