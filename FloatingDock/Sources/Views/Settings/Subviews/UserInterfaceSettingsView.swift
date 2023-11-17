@@ -38,7 +38,7 @@ struct UserInterfaceSettingsView: View {
                     }
                     
                     Text("Icon Size")
-                    Slider(value: $dockIconSize, in: 32...96, step: 1) {
+                    Slider(value: $dockIconSize, in: 32...96, step: 8) {
                         EmptyView()
                     } minimumValueLabel: {
                         Text("32")
@@ -59,7 +59,7 @@ struct UserInterfaceSettingsView: View {
                     ColorPicker("", selection: $dockBackgroundColor, supportsOpacity: false)
                     
                     Text("Background Opacity")
-                    Slider(value: $dockBackgroundOpacity, in: 0...1, step: 0.01) {
+                    Slider(value: $dockBackgroundOpacity, in: 0...1, step: 0.1) {
                         EmptyView()
                     } minimumValueLabel: {
                         Text("0%")

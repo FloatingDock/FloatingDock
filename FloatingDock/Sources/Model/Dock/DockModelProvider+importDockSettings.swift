@@ -37,6 +37,7 @@ extension DockModelProvider {
     func importDockSettings(_ window: NSWindow? = nil, completed: ((Error?) -> ())? = nil) {
         do {
             try importDockModel(from: .userDirectory)
+            completed?(nil)
         } catch {
             completed?(error)
         }
@@ -62,9 +63,11 @@ extension DockModelProvider {
                     
         if let persistentApplications = dockConfiguration[.PersistentApplications] as? Array<Dictionary<String, Any>> {
             self.dockModel.applications.removeAll()
-            persistentApplications.map(toDockEntry(app:)).forEach { entry in
-                self.dockModel.applications.append(entry)
-            }
+            persistentApplications
+                .map(toDockEntry(app:))
+                .forEach { entry in
+                    self.dockModel.applications.append(entry)
+                }
         }
         
         try self.saveModel()
@@ -72,7 +75,7 @@ extension DockModelProvider {
     
     private func toDockEntry(app: Dictionary<String, Any>) -> DockEntry {
         let tileData = toDictionary(app[.TileData]!)
-        let id = toInt(app[.GUID]!)
+        let id = toInt(app[.GUID] ?? 0)
         let label = toString(tileData[.FileLabel]!)
         let bundleIdentifier = toString(tileData[.BundleIdentifier]!)
         let url = URL(string: toString(toDictionary(tileData[.FileData]!)[.FileURL]!))

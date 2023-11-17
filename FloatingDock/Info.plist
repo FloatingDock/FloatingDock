@@ -2,14 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SUEnableInstallerLauncherService</key>
-	<true/>
-	<key>SUEnableDownloaderService</key>
-	<true/>
-	<key>SUFeedURL</key>
-	<string>https://floatingdock.github.io/appcast.xml</string>
-	<key>SUPublicEDKey</key>
-	<string>QFRBt6XMieSl7lmJ4H/X8OZnaOdj7szl9sF/AQUEktA=</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 </dict>

@@ -25,7 +25,9 @@ class DockModelProvider {
     // MARK: - Static Properties
     
     static var shared: DockModelProvider = {
-        DockModelProvider()
+        let provider = DockModelProvider()
+        
+        return provider
     }()
     
     
@@ -38,7 +40,6 @@ class DockModelProvider {
     
     private init() {
         try? loadModel()
-        //dockModel = DockModel()
     }
     
     

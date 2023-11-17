@@ -33,10 +33,8 @@ struct GeneralSettingsView: View {
                     LaunchAtLogin.Toggle("Launch Floating Dock when you login")
                         .padding(.bottom, 5)
                     
-                    /* TODO Check how to open a window only if the flag is set
                      Toggle("Import Dock settings when launching", isOn: $importDockSettingsOnLaunch)
-                     .padding(.bottom, 30)
-                     */
+                        .padding(.bottom, 30)
                 }
                 
                 Section("Hotkeys") {
@@ -55,7 +53,7 @@ struct GeneralSettingsView: View {
     
     // MARK: - Private Properties
     
-    @AppStorage("importDockSettingsOnLaunch")
+    @AppStorage(.ImportDockSettingsOnLaunch)
     private var importDockSettingsOnLaunch: Bool = false
 }
 

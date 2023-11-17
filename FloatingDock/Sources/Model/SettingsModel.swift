@@ -28,6 +28,7 @@ extension String {
     static let DockIconScaleFactor = "dockIconScaleFactor"
     static let DockBackgroundColor = "dockBackgroundColor"
     static let DockBackgroundOpacity = "dockBackgroundOpacity"
+    static let ImportDockSettingsOnLaunch = "importDockSettingsOnLaunch"
 }
 
 class SettingsModel {
@@ -71,6 +72,7 @@ class SettingsModel {
             UserDefaults.standard.set(newValue, forKey: .DockIconSize)
         }
     }
+    
     var scaleFactor: Double {
         get {
             let val = UserDefaults.standard.double(forKey: .DockIconScaleFactor)
@@ -81,6 +83,7 @@ class SettingsModel {
             UserDefaults.standard.set(newValue, forKey: .DockIconScaleFactor)
         }
     }
+    
     var dockBackgroundColor: Color {
         get {
             if let val = UserDefaults.standard.string(forKey: .DockBackgroundColor) {
@@ -93,6 +96,7 @@ class SettingsModel {
             UserDefaults.standard.set(newValue, forKey: .DockBackgroundColor)
         }
     }
+    
     var dockBackgroundOpacity: Double {
         get {
             let val = UserDefaults.standard.double(forKey: .DockBackgroundOpacity)
@@ -101,6 +105,18 @@ class SettingsModel {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: .DockBackgroundOpacity)
+        }
+    }
+    
+    var importDockSettingsOnLaunch: Bool {
+        
+        get {
+            let val = UserDefaults.standard.bool(forKey: .ImportDockSettingsOnLaunch)
+            
+            return val
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: .ImportDockSettingsOnLaunch)
         }
     }
     
