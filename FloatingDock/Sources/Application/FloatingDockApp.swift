@@ -59,7 +59,14 @@ struct FloatingDockApp: App {
     
     // MARK: - Private Properties
     
-    private let updater = AppUpdater(owner: "FloatingDock", repo: "FloatingDock")
+    private var _updater: AppUpdater?
+    private var updater: AppUpdater {
+        if let _updater {
+            return _updater
+        } else {
+            return AppUpdater(owner: "FloatingDock", repo: "FloatingDock")
+        }
+    }
     private let dockWindowToggleCommand = KeyCommand(name: .DockWindowToggle)
     private let onboardingWindowController = OnboardingWindowController()
     private var isOnboarded: Bool {
@@ -71,6 +78,9 @@ struct FloatingDockApp: App {
     // MARK: - Initialization
     
     init() {
+        if SettingsModel.shared.autoUpdate {
+            _updater = AppUpdater(owner: "FloatingDock", repo: "FloatingDock")
+        }
         dockWindowToggleCommand.observe(.keyDown, handler: toggleDockWindow)
         showOnboardingWindowIfTasksAreOpen()
         importDockModel()

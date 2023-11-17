@@ -29,20 +29,34 @@ struct GeneralSettingsView: View {
     var body: some View {
         VStack {
             Form {
-                Section("Launching Behaviour") {
+                Section {
                     LaunchAtLogin.Toggle("Launch Floating Dock when you login")
                         .padding(.bottom, 5)
                     
                      Toggle("Import Dock settings when launching", isOn: $importDockSettingsOnLaunch)
                         .padding(.bottom, 30)
+                } header: {
+                    Text("Launching Behaviour").font(.headline)
                 }
                 
-                Section("Hotkeys") {
+                Section {
+                    VStack {
+                        Toggle("Automatically check for updates", isOn: $autoUpdate)
+                        Text("Restart required to take changes into account").font(.footnote)
+                    }
+                    .padding(.bottom, 30)
+                } header: {
+                    Text("Update").font(.headline)
+                }
+                
+                Section {
                     HStack {
                         Text("Toggle Floating Dock window")
                         KeyRecorderView(name: .DockWindowToggle)
                     }
                     .padding(.bottom, 30)
+                } header: {
+                    Text("Hotkeys").font(.headline)
                 }
             }
             
@@ -55,6 +69,9 @@ struct GeneralSettingsView: View {
     
     @AppStorage(.ImportDockSettingsOnLaunch)
     private var importDockSettingsOnLaunch: Bool = false
+    
+    @AppStorage(.AutoUpdate)
+    private var autoUpdate: Bool = false
 }
 
 struct GeneralSettingsView_Previews: PreviewProvider {

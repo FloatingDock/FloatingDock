@@ -274,9 +274,9 @@
 				E9D1029E298689960045D9B0 /* LICENSE.md */,
 				E9D1029D298689960045D9B0 /* README.md */,
 				E9AA03E829A0F30B009B3CD0 /* ExportOptions.plist */,
+				E9D10281298678030045D9B0 /* FloatingDock */,
 				E9199CD82996DCF200CD6351 /* Common */,
 				E9199CC72996DB4700CD6351 /* FloatingDockServiceProvider */,
-				E9D10281298678030045D9B0 /* FloatingDock */,
 				E9D10280298678030045D9B0 /* Products */,
 			);
 			sourceTree = "<group>";
