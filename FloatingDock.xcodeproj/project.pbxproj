@@ -86,6 +86,7 @@
 		E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockEntry+image.swift"; sourceTree = "<group>"; };
 		E9023392298C37D800CDA6E1 /* DockItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItemView.swift; sourceTree = "<group>"; };
 		E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication+standardPanel.swift"; sourceTree = "<group>"; };
+		E90A873D2B07D48700398045 /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
 		E9199CC02996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockWindowToggleController+ApplicationLauncher.swift"; sourceTree = "<group>"; };
 		E9199CC62996DB4700CD6351 /* FloatingDockServiceProvider.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = FloatingDockServiceProvider.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9199CC82996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockServiceProviderProtocol.swift; sourceTree = "<group>"; };
@@ -177,6 +178,14 @@
 			path = AppKit;
 			sourceTree = "<group>";
 		};
+		E90A873C2B07D3EE00398045 /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				E90A873D2B07D48700398045 /* ci_post_xcodebuild.sh */,
+			);
+			path = ci_scripts;
+			sourceTree = "<group>";
+		};
 		E9199CC72996DB4700CD6351 /* FloatingDockServiceProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,13 +269,14 @@
 		E9D10276298678030045D9B0 = {
 			isa = PBXGroup;
 			children = (
+				E90A873C2B07D3EE00398045 /* ci_scripts */,
 				E9D1029C298689960045D9B0 /* .gitignore */,
 				E9D1029E298689960045D9B0 /* LICENSE.md */,
 				E9D1029D298689960045D9B0 /* README.md */,
 				E9AA03E829A0F30B009B3CD0 /* ExportOptions.plist */,
+				E9D10281298678030045D9B0 /* FloatingDock */,
 				E9199CD82996DCF200CD6351 /* Common */,
 				E9199CC72996DB4700CD6351 /* FloatingDockServiceProvider */,
-				E9D10281298678030045D9B0 /* FloatingDock */,
 				E9D10280298678030045D9B0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -762,7 +772,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 4;
+				MARKETING_VERSION = "3.0.$(CURRENT_PROJECT_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.FloatingDock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -799,7 +809,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 4;
+				MARKETING_VERSION = "3.0.$(CURRENT_PROJECT_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.FloatingDock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

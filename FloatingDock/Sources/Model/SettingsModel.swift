@@ -29,6 +29,7 @@ extension String {
     static let DockBackgroundColor = "dockBackgroundColor"
     static let DockBackgroundOpacity = "dockBackgroundOpacity"
     static let ImportDockSettingsOnLaunch = "importDockSettingsOnLaunch"
+    static let AutoUpdate = "autoUpdate"
 }
 
 class SettingsModel {
@@ -109,7 +110,6 @@ class SettingsModel {
     }
     
     var importDockSettingsOnLaunch: Bool {
-        
         get {
             let val = UserDefaults.standard.bool(forKey: .ImportDockSettingsOnLaunch)
             
@@ -117,6 +117,17 @@ class SettingsModel {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: .ImportDockSettingsOnLaunch)
+        }
+    }
+    
+    var autoUpdate: Bool {
+        get {
+            let val = UserDefaults.standard.bool(forKey: .AutoUpdate)
+            
+            return val
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: .AutoUpdate)
         }
     }
     
