@@ -50,7 +50,6 @@ class UpdateNotificationModel {
     // MARK: - Initialization
     
     private init() {
-        
         setupNotificationCategories()
     }
     
