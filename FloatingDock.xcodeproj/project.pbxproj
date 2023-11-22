@@ -15,7 +15,14 @@
 		E9023390298ACD7A00CDA6E1 /* DockEntry+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */; };
 		E9023393298C37D800CDA6E1 /* DockItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023392298C37D800CDA6E1 /* DockItemView.swift */; };
 		E9023399298CDF5500CDA6E1 /* NSApplication+standardPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */; };
-		E90A873B2B07953B00398045 /* AppUpdater in Frameworks */ = {isa = PBXBuildFile; productRef = E90A873A2B07953B00398045 /* AppUpdater */; };
+		E90A87402B08C01700398045 /* CocoaLumberjackSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E90A873F2B08C01700398045 /* CocoaLumberjackSwift */; };
+		E90A87432B08C17100398045 /* HawkUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A87422B08C17100398045 /* HawkUpdater.swift */; };
+		E90A87462B08EB2A00398045 /* HawkExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = E90A87452B08EB2A00398045 /* HawkExtensions */; };
+		E90A874B2B0A5C2F00398045 /* Version in Frameworks */ = {isa = PBXBuildFile; productRef = E90A874A2B0A5C2F00398045 /* Version */; };
+		E90A874D2B0ABCFC00398045 /* UpdateNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A874C2B0ABCFC00398045 /* UpdateNotificationModel.swift */; };
+		E90A874F2B0AC5EA00398045 /* FloatingDockAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A874E2B0AC5EA00398045 /* FloatingDockAppDelegate.swift */; };
+		E90A87572B0E639900398045 /* ErrorNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A87562B0E639900398045 /* ErrorNotificationModel.swift */; };
+		E90A875A2B0E64CB00398045 /* BaseNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A87592B0E64CB00398045 /* BaseNotificationModel.swift */; };
 		E9199CC12996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CC02996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift */; };
 		E9199CC92996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CC82996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift */; };
 		E9199CCB2996DB4700CD6351 /* FloatingDockServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CCA2996DB4700CD6351 /* FloatingDockServiceProvider.swift */; };
@@ -50,7 +57,6 @@
 		E9D102BA298852F60045D9B0 /* DockModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102B9298852F60045D9B0 /* DockModelProvider.swift */; };
 		E9D102BE298855C40045D9B0 /* DockModelProvider+importDockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102BD298855C40045D9B0 /* DockModelProvider+importDockSettings.swift */; };
 		E9D102C0298856790045D9B0 /* URL+locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D102BF298856790045D9B0 /* URL+locations.swift */; };
-		E9E58A6B2AB5B2C30086145F /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = E9E58A6A2AB5B2C30086145F /* Sparkle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +93,11 @@
 		E9023392298C37D800CDA6E1 /* DockItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItemView.swift; sourceTree = "<group>"; };
 		E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication+standardPanel.swift"; sourceTree = "<group>"; };
 		E90A873D2B07D48700398045 /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
+		E90A87422B08C17100398045 /* HawkUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HawkUpdater.swift; sourceTree = "<group>"; };
+		E90A874C2B0ABCFC00398045 /* UpdateNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotificationModel.swift; sourceTree = "<group>"; };
+		E90A874E2B0AC5EA00398045 /* FloatingDockAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockAppDelegate.swift; sourceTree = "<group>"; };
+		E90A87562B0E639900398045 /* ErrorNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorNotificationModel.swift; sourceTree = "<group>"; };
+		E90A87592B0E64CB00398045 /* BaseNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNotificationModel.swift; sourceTree = "<group>"; };
 		E9199CC02996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockWindowToggleController+ApplicationLauncher.swift"; sourceTree = "<group>"; };
 		E9199CC62996DB4700CD6351 /* FloatingDockServiceProvider.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = FloatingDockServiceProvider.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9199CC82996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockServiceProviderProtocol.swift; sourceTree = "<group>"; };
@@ -140,10 +151,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9D102A429878E970045D9B0 /* LaunchAtLogin in Frameworks */,
-				E9E58A6B2AB5B2C30086145F /* Sparkle in Frameworks */,
-				E90A873B2B07953B00398045 /* AppUpdater in Frameworks */,
 				E9D102A129878E6A0045D9B0 /* SwiftKeys in Frameworks */,
+				E90A87402B08C01700398045 /* CocoaLumberjackSwift in Frameworks */,
+				E90A874B2B0A5C2F00398045 /* Version in Frameworks */,
 				E947E5BB298D581E00314F44 /* DTOnboarding in Frameworks */,
+				E90A87462B08EB2A00398045 /* HawkExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +196,24 @@
 				E90A873D2B07D48700398045 /* ci_post_xcodebuild.sh */,
 			);
 			path = ci_scripts;
+			sourceTree = "<group>";
+		};
+		E90A87412B08C06300398045 /* Updater */ = {
+			isa = PBXGroup;
+			children = (
+				E90A87422B08C17100398045 /* HawkUpdater.swift */,
+			);
+			path = Updater;
+			sourceTree = "<group>";
+		};
+		E90A87582B0E649800398045 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				E90A87592B0E64CB00398045 /* BaseNotificationModel.swift */,
+				E90A87562B0E639900398045 /* ErrorNotificationModel.swift */,
+				E90A874C2B0ABCFC00398045 /* UpdateNotificationModel.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		E9199CC72996DB4700CD6351 /* FloatingDockServiceProvider */ = {
@@ -315,6 +345,7 @@
 				E9D102922986802E0045D9B0 /* Application */,
 				E9D102A9298795B20045D9B0 /* Extensions */,
 				E9D102B12987DBBC0045D9B0 /* Model */,
+				E90A87412B08C06300398045 /* Updater */,
 				E9D10295298683230045D9B0 /* Views */,
 				E947E5B3298D2BC600314F44 /* Windows */,
 			);
@@ -325,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D10282298678030045D9B0 /* FloatingDockApp.swift */,
+				E90A874E2B0AC5EA00398045 /* FloatingDockAppDelegate.swift */,
 				E90233822989777B00CDA6E1 /* ApplicationError.swift */,
 				E90233842989A53400CDA6E1 /* HotkeyNames.swift */,
 				E9199CDB2996EFD000CD6351 /* FloatingDockService.swift */,
@@ -395,6 +427,7 @@
 			children = (
 				E9D102B22987DBD30045D9B0 /* SettingsModel.swift */,
 				E9D102B4298850FF0045D9B0 /* Dock */,
+				E90A87582B0E649800398045 /* Notifications */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -450,8 +483,9 @@
 				E9D102A029878E6A0045D9B0 /* SwiftKeys */,
 				E9D102A329878E970045D9B0 /* LaunchAtLogin */,
 				E947E5BA298D581E00314F44 /* DTOnboarding */,
-				E9E58A6A2AB5B2C30086145F /* Sparkle */,
-				E90A873A2B07953B00398045 /* AppUpdater */,
+				E90A873F2B08C01700398045 /* CocoaLumberjackSwift */,
+				E90A87452B08EB2A00398045 /* HawkExtensions */,
+				E90A874A2B0A5C2F00398045 /* Version */,
 			);
 			productName = FloatingDock;
 			productReference = E9D1027F298678030045D9B0 /* FloatingDock.app */;
@@ -488,8 +522,9 @@
 				E9D1029F29878E6A0045D9B0 /* XCRemoteSwiftPackageReference "SwiftKeys" */,
 				E9D102A229878E970045D9B0 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 				E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */,
-				E9E58A692AB5B2C30086145F /* XCRemoteSwiftPackageReference "Sparkle" */,
-				E90A87392B07953B00398045 /* XCRemoteSwiftPackageReference "AppUpdater" */,
+				E90A873E2B08C01700398045 /* XCRemoteSwiftPackageReference "CocoaLumberjack" */,
+				E90A87442B08EB2A00398045 /* XCRemoteSwiftPackageReference "HawkExtensions" */,
+				E90A87492B0A5C2F00398045 /* XCRemoteSwiftPackageReference "Version" */,
 			);
 			productRefGroup = E9D10280298678030045D9B0 /* Products */;
 			projectDirPath = "";
@@ -545,6 +580,10 @@
 				E947E5BE298DB24C00314F44 /* ImportDockConfigurationView.swift in Sources */,
 				E947E5C8298F055800314F44 /* LaunchAtLogingView.swift in Sources */,
 				E9D102B32987DBD30045D9B0 /* SettingsModel.swift in Sources */,
+				E90A87572B0E639900398045 /* ErrorNotificationModel.swift in Sources */,
+				E90A874D2B0ABCFC00398045 /* UpdateNotificationModel.swift in Sources */,
+				E90A874F2B0AC5EA00398045 /* FloatingDockAppDelegate.swift in Sources */,
+				E90A875A2B0E64CB00398045 /* BaseNotificationModel.swift in Sources */,
 				E9D102C0298856790045D9B0 /* URL+locations.swift in Sources */,
 				E9199CDC2996EFD000CD6351 /* FloatingDockService.swift in Sources */,
 				E902338A2989B12B00CDA6E1 /* DockWindowController.swift in Sources */,
@@ -567,6 +606,7 @@
 				E9D10297298683370045D9B0 /* SettingsView.swift in Sources */,
 				E90233832989777B00CDA6E1 /* ApplicationError.swift in Sources */,
 				E947E5C4298ECA0100314F44 /* URL+identifiable.swift in Sources */,
+				E90A87432B08C17100398045 /* HawkUpdater.swift in Sources */,
 				E9199CDA2996DD1900CD6351 /* FloatingDockServiceProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -852,12 +892,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E90A87392B07953B00398045 /* XCRemoteSwiftPackageReference "AppUpdater" */ = {
+		E90A873E2B08C01700398045 /* XCRemoteSwiftPackageReference "CocoaLumberjack" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mxcl/AppUpdater";
+			repositoryURL = "https://github.com/CocoaLumberjack/CocoaLumberjack.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.1;
+				minimumVersion = 3.8.2;
+			};
+		};
+		E90A87442B08EB2A00398045 /* XCRemoteSwiftPackageReference "HawkExtensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SaylorSwift/HawkExtensions";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		E90A87492B0A5C2F00398045 /* XCRemoteSwiftPackageReference "Version" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/Version";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
 			};
 		};
 		E947E5B9298D581E00314F44 /* XCRemoteSwiftPackageReference "DTOnboarding" */ = {
@@ -884,21 +940,23 @@
 				kind = branch;
 			};
 		};
-		E9E58A692AB5B2C30086145F /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E90A873A2B07953B00398045 /* AppUpdater */ = {
+		E90A873F2B08C01700398045 /* CocoaLumberjackSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E90A87392B07953B00398045 /* XCRemoteSwiftPackageReference "AppUpdater" */;
-			productName = AppUpdater;
+			package = E90A873E2B08C01700398045 /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
+			productName = CocoaLumberjackSwift;
+		};
+		E90A87452B08EB2A00398045 /* HawkExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E90A87442B08EB2A00398045 /* XCRemoteSwiftPackageReference "HawkExtensions" */;
+			productName = HawkExtensions;
+		};
+		E90A874A2B0A5C2F00398045 /* Version */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E90A87492B0A5C2F00398045 /* XCRemoteSwiftPackageReference "Version" */;
+			productName = Version;
 		};
 		E947E5BA298D581E00314F44 /* DTOnboarding */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -914,11 +972,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E9D102A229878E970045D9B0 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
-		};
-		E9E58A6A2AB5B2C30086145F /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E9E58A692AB5B2C30086145F /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -42,10 +42,9 @@ class SettingsModel {
     
     
     // MARK: - Public Properties
-    
     var dockModel: Data? {
         get {
-            UserDefaults.standard.data(forKey: .DockModelSettingsKey)
+            return UserDefaults.standard.data(forKey: .DockModelSettingsKey)
         }
         set {
             UserDefaults.standard.set(newValue, forKey: .DockModelSettingsKey)

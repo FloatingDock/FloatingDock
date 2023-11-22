@@ -18,9 +18,9 @@
 //  limitations under the License.
 //
 
-import AppUpdater
 import SwiftKeys
 import SwiftUI
+import UserNotifications
 
 extension NSNotification.Name {
     // Navigation in the Onboarding UI
@@ -43,7 +43,7 @@ struct FloatingDockApp: App {
             Button("Open Onboarding Panel...", action: openOnboardingWindow)
             Button("Import Dock Settings", action: DockModelProvider.shared.importDockSettings)
             Divider()
-            Button("Check For Update...", action: checkUpdate)
+            Button("Check Update...", action: checkUpdate)
             Button("About Floating Dock...", action: NSApplication.shared.showAboutPanel)
             Divider()
             Button("Quit Floating Dock") {
@@ -59,14 +59,8 @@ struct FloatingDockApp: App {
     
     // MARK: - Private Properties
     
-    private var _updater: AppUpdater?
-    private var updater: AppUpdater {
-        if let _updater {
-            return _updater
-        } else {
-            return AppUpdater(owner: "FloatingDock", repo: "FloatingDock")
-        }
-    }
+    @NSApplicationDelegateAdaptor(FloatingDockAppDelegate.self)
+    private var appDelegate
     private let dockWindowToggleCommand = KeyCommand(name: .DockWindowToggle)
     private let onboardingWindowController = OnboardingWindowController()
     private var isOnboarded: Bool {
@@ -78,9 +72,6 @@ struct FloatingDockApp: App {
     // MARK: - Initialization
     
     init() {
-        if SettingsModel.shared.autoUpdate {
-            _updater = AppUpdater(owner: "FloatingDock", repo: "FloatingDock")
-        }
         dockWindowToggleCommand.observe(.keyDown, handler: toggleDockWindow)
         showOnboardingWindowIfTasksAreOpen()
         importDockModel()
@@ -90,12 +81,8 @@ struct FloatingDockApp: App {
     // MARK: - Private Methods
     
     private func checkUpdate() {
-        updater.check().catch(policy: .allErrors) { error in
-            if error.isCancelled {
-                // promise is cancelled if we are already up-to-date
-            } else {
-                // show alert for this error
-            }
+        Task {
+            await FloatingDockAppDelegate.instance.updater.checkUpdate()
         }
     }
     
