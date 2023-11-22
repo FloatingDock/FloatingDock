@@ -42,7 +42,6 @@ struct GeneralSettingsView: View {
                 Section {
                     VStack {
                         Toggle("Automatically check for updates", isOn: $autoUpdate)
-                        Text("Restart required to take changes into account").font(.footnote)
                     }
                     .padding(.bottom, 30)
                 } header: {
