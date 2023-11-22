@@ -103,6 +103,7 @@ public class HawkUpdater {
     
     public func downloadUpdate(version: String? = nil) async {
         do {
+            self.onError(CocoaError(CocoaError.fileReadNoSuchFile))
             let releases = try await loadReleases()
             var releaseToInstall: Release? = nil
             

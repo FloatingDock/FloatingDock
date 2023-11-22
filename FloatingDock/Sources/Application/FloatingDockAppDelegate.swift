@@ -110,7 +110,7 @@ public class FloatingDockAppDelegate: NSResponder, NSApplicationDelegate, UNUser
     // MARK: - Private Static Methods
     
     private static func updaterErrorOcurred(_ error: Error) {
-
+        ErrorNotificationModel.shared.showErrorNotification(text: "Can't update application.", error: error)
     }
 
     private static func updateAvailable(_ version: String) {

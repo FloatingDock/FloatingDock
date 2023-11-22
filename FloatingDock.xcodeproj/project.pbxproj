@@ -21,6 +21,8 @@
 		E90A874B2B0A5C2F00398045 /* Version in Frameworks */ = {isa = PBXBuildFile; productRef = E90A874A2B0A5C2F00398045 /* Version */; };
 		E90A874D2B0ABCFC00398045 /* UpdateNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A874C2B0ABCFC00398045 /* UpdateNotificationModel.swift */; };
 		E90A874F2B0AC5EA00398045 /* FloatingDockAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A874E2B0AC5EA00398045 /* FloatingDockAppDelegate.swift */; };
+		E90A87572B0E639900398045 /* ErrorNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A87562B0E639900398045 /* ErrorNotificationModel.swift */; };
+		E90A875A2B0E64CB00398045 /* BaseNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90A87592B0E64CB00398045 /* BaseNotificationModel.swift */; };
 		E9199CC12996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CC02996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift */; };
 		E9199CC92996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CC82996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift */; };
 		E9199CCB2996DB4700CD6351 /* FloatingDockServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9199CCA2996DB4700CD6351 /* FloatingDockServiceProvider.swift */; };
@@ -94,6 +96,8 @@
 		E90A87422B08C17100398045 /* HawkUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HawkUpdater.swift; sourceTree = "<group>"; };
 		E90A874C2B0ABCFC00398045 /* UpdateNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotificationModel.swift; sourceTree = "<group>"; };
 		E90A874E2B0AC5EA00398045 /* FloatingDockAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockAppDelegate.swift; sourceTree = "<group>"; };
+		E90A87562B0E639900398045 /* ErrorNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorNotificationModel.swift; sourceTree = "<group>"; };
+		E90A87592B0E64CB00398045 /* BaseNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNotificationModel.swift; sourceTree = "<group>"; };
 		E9199CC02996D4A300CD6351 /* DockWindowToggleController+ApplicationLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockWindowToggleController+ApplicationLauncher.swift"; sourceTree = "<group>"; };
 		E9199CC62996DB4700CD6351 /* FloatingDockServiceProvider.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = FloatingDockServiceProvider.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9199CC82996DB4700CD6351 /* FloatingDockServiceProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockServiceProviderProtocol.swift; sourceTree = "<group>"; };
@@ -200,6 +204,16 @@
 				E90A87422B08C17100398045 /* HawkUpdater.swift */,
 			);
 			path = Updater;
+			sourceTree = "<group>";
+		};
+		E90A87582B0E649800398045 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				E90A87592B0E64CB00398045 /* BaseNotificationModel.swift */,
+				E90A87562B0E639900398045 /* ErrorNotificationModel.swift */,
+				E90A874C2B0ABCFC00398045 /* UpdateNotificationModel.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		E9199CC72996DB4700CD6351 /* FloatingDockServiceProvider */ = {
@@ -412,8 +426,8 @@
 			isa = PBXGroup;
 			children = (
 				E9D102B22987DBD30045D9B0 /* SettingsModel.swift */,
-				E90A874C2B0ABCFC00398045 /* UpdateNotificationModel.swift */,
 				E9D102B4298850FF0045D9B0 /* Dock */,
+				E90A87582B0E649800398045 /* Notifications */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -566,8 +580,10 @@
 				E947E5BE298DB24C00314F44 /* ImportDockConfigurationView.swift in Sources */,
 				E947E5C8298F055800314F44 /* LaunchAtLogingView.swift in Sources */,
 				E9D102B32987DBD30045D9B0 /* SettingsModel.swift in Sources */,
+				E90A87572B0E639900398045 /* ErrorNotificationModel.swift in Sources */,
 				E90A874D2B0ABCFC00398045 /* UpdateNotificationModel.swift in Sources */,
 				E90A874F2B0AC5EA00398045 /* FloatingDockAppDelegate.swift in Sources */,
+				E90A875A2B0E64CB00398045 /* BaseNotificationModel.swift in Sources */,
 				E9D102C0298856790045D9B0 /* URL+locations.swift in Sources */,
 				E9199CDC2996EFD000CD6351 /* FloatingDockService.swift in Sources */,
 				E902338A2989B12B00CDA6E1 /* DockWindowController.swift in Sources */,

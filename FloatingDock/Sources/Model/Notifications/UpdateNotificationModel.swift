@@ -21,7 +21,7 @@
 import Foundation
 import UserNotifications
 
-class UpdateNotificationModel {
+class UpdateNotificationModel: BaseNotificationModel {
     
     // MARK: - Static Properties
     
@@ -33,17 +33,9 @@ class UpdateNotificationModel {
     // MARK: - Public Methods
     
     public func showUpdateNotification(version: String) {
-        let content = updateNotificationContent(version: version)
-        let trigger = triggerIn(seconds: 1)
-
-        let uuidString = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-
-        UNUserNotificationCenter.current().add(request) { (error) in
-            if error != nil {
-                print("Failed to add a notification request: \(String(describing: error))")
-            }
-        }
+        showNotification(
+            content: updateNotificationContent(version: version),
+            trigger: triggerIn(seconds: 1))
     }
     
     
@@ -88,16 +80,6 @@ class UpdateNotificationModel {
         content.categoryIdentifier = Update.Category.update.rawValue
 
         return content
-    }
-    
-    private func triggerIn(seconds: Int) -> UNNotificationTrigger {
-        let currentSecond = Calendar.current.component(.second, from: Date())
-
-        var dateComponents = DateComponents()
-        dateComponents.calendar = Calendar.current
-        dateComponents.second = (currentSecond + seconds) % 60
-
-        return UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
     }
     
     

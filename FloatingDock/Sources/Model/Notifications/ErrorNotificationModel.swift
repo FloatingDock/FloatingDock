@@ -21,7 +21,7 @@
 import Foundation
 import UserNotifications
 
-class ErrorNotificationModel {
+class ErrorNotificationModel: BaseNotificationModel {
     
     // MARK: - Static Properties
     
@@ -32,16 +32,30 @@ class ErrorNotificationModel {
     // MARK: - Public Methods
     
     public func showErrorNotification(text: String, error: Error? = nil) {
-        let content = errorNotificationContent(version: version)
-        let trigger = triggerIn(seconds: 1)
-
-        let uuidString = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-
-        UNUserNotificationCenter.current().add(request) { (error) in
-            if error != nil {
-                print("Failed to add a notification request: \(String(describing: error))")
-            }
-        }*/
+        showNotification(
+            content: errorNotificationContent(text: text, error: error),
+            trigger: triggerIn(seconds: 1))
+    }
+    
+    
+    // MARK: - Initialization
+    
+    private init() {}
+    
+    
+    // MARK: - Private Methods
+    
+    private func errorNotificationContent(text: String, error: Error?) -> UNNotificationContent {
+        let content = UNMutableNotificationContent()
+        
+        content.title = "Floating Dock"
+        content.subtitle = "Error"
+        content.body = "\(text)"
+        
+        if let error {
+            content.body = content.body + "\n\(error.localizedDescription)"
+        }
+        
+        return content
     }
 }
