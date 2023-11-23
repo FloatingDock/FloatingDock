@@ -11,7 +11,7 @@ echo "******$CI_PRIMARY_REPOSITORY_PATH*****"
 customMarketingVersion=`/usr/libexec/PlistBuddy -c 'Print :CUSTOM_MARKETING_VERSION' $CI_PRIMARY_REPOSITORY_PATH/FloatingDock/Info.plist`
 
 # 2. Calculate version: ${CUSTOM_MARKETING_VERSION}.0.${BUILD_NUMBER}
-version="$customMarketingVersion.0.$BUILD_NUMBER"
+version="$customMarketingVersion.0.$CI_BUILD_NUMBER"
 
 echo "************ version = $version"
 
