@@ -93,7 +93,7 @@
 		E902338F298ACD7A00CDA6E1 /* DockEntry+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockEntry+image.swift"; sourceTree = "<group>"; };
 		E9023392298C37D800CDA6E1 /* DockItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItemView.swift; sourceTree = "<group>"; };
 		E9023398298CDF5500CDA6E1 /* NSApplication+standardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication+standardPanel.swift"; sourceTree = "<group>"; };
-		E90A873D2B07D48700398045 /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
+		E90A873D2B07D48700398045 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
 		E90A87422B08C17100398045 /* HawkUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HawkUpdater.swift; sourceTree = "<group>"; };
 		E90A874C2B0ABCFC00398045 /* UpdateNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotificationModel.swift; sourceTree = "<group>"; };
 		E90A874E2B0AC5EA00398045 /* FloatingDockAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingDockAppDelegate.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 		E90A873C2B07D3EE00398045 /* ci_scripts */ = {
 			isa = PBXGroup;
 			children = (
-				E90A873D2B07D48700398045 /* ci_post_xcodebuild.sh */,
+				E90A873D2B07D48700398045 /* ci_pre_xcodebuild.sh */,
 			);
 			path = ci_scripts;
 			sourceTree = "<group>";
@@ -803,18 +803,17 @@
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = FloatingDock/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Floating Dock";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright (C) 2023 Thomas Bonk (thomas@meandmymac.de)";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = "3.0.$(CURRENT_PROJECT_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.FloatingDock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -840,18 +839,17 @@
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = FloatingDock/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Floating Dock";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright (C) 2023 Thomas Bonk (thomas@meandmymac.de)";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = "3.0.$(CURRENT_PROJECT_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.FloatingDock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

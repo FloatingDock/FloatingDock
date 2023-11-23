@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0.$(CURRENT_PROJECT_VERSION)</string>
+	<string></string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -27,6 +27,8 @@
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string></string>
+	<string>Copyright (C) 2023 by Thomas Bonk &lt;thomas@meandmymac.de&gt;</string>
+	<key>CUSTOM_MARKETING_VERSION</key>
+	<string>3</string>
 </dict>
 </plist>
