@@ -16,4 +16,4 @@ version="$customMarketingVersion.0.$CI_BUILD_NUMBER"
 echo "************ version = $version"
 
 # 3. Set CFBundleShortVersionString in Info.plist to calculated version
-/usr/libexec/PlistBuddy -c 'Set :CFBundleShortVersionString $version' $CI_PRIMARY_REPOSITORY_PATH/FloatingDock/Info.plist
+/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $version" $CI_PRIMARY_REPOSITORY_PATH/FloatingDock/Info.plist
