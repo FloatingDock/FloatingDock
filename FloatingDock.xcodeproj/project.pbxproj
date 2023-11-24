@@ -217,13 +217,6 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
-		E90A875D2B1074E000398045 /* scripts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = scripts;
-			sourceTree = "<group>";
-		};
 		E9199CC72996DB4700CD6351 /* FloatingDockServiceProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,7 +301,6 @@
 			isa = PBXGroup;
 			children = (
 				E90A873C2B07D3EE00398045 /* ci_scripts */,
-				E90A875D2B1074E000398045 /* scripts */,
 				E9D1029C298689960045D9B0 /* .gitignore */,
 				E9D1029E298689960045D9B0 /* LICENSE.md */,
 				E9D1029D298689960045D9B0 /* README.md */,
